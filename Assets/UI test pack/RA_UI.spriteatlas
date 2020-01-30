@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RA_UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d1eb65d4c3de59c4eb1ad3fe2fb2806e, type: 3}
+    totalSpriteSurfaceArea: 1802166
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 46364b10233f74741a202267b4be2b50, type: 3}
+  - {fileID: 21300000, guid: 747ab92194d75f54fad0d266c46eb5af, type: 3}
+  - {fileID: 21300000, guid: 0f6b48a1964bf4545ab06a8312fd5538, type: 3}
+  - {fileID: 21300000, guid: 0b9429b1656c46b4aaa09f34ca8b093a, type: 3}
+  - {fileID: 21300000, guid: 10d525026eb7bbb499199735f03536d0, type: 3}
+  - {fileID: 21300000, guid: 829fd5229dafb35499a09daae59a02b9, type: 3}
+  - {fileID: 21300000, guid: 59a550f267f79184eb381fd4468fcff1, type: 3}
+  - {fileID: 21300000, guid: 2a565353df8ab774db8af14b3f77bc8f, type: 3}
+  - {fileID: 21300000, guid: 23db41742be8ee94f986b466a3703e75, type: 3}
+  - {fileID: 21300000, guid: 9ccf628410a848445a242dbaea773bc1, type: 3}
+  - {fileID: 21300000, guid: 9791953568e512d4386fd10710844c40, type: 3}
+  - {fileID: 21300000, guid: 568ae745448e4744bb963d23d8a860fe, type: 3}
+  - {fileID: 21300000, guid: be383a7513ad9bd4eae1110f107a95ab, type: 3}
+  - {fileID: 21300000, guid: 73fba4161f2140f40b0c54d183331d7f, type: 3}
+  - {fileID: 21300000, guid: c9cb18262ab4e6648abab9366d5d7d91, type: 3}
+  - {fileID: 21300000, guid: 2c85ae26382b4fe43a7ffa5272de8aef, type: 3}
+  - {fileID: 21300000, guid: 06012a961ed16894aa5ad835fa1a347f, type: 3}
+  - {fileID: 21300000, guid: 340fa9d66324eb5498053cae53d2a73e, type: 3}
+  - {fileID: 21300000, guid: c8b195e63a564714da9e9f3d30545124, type: 3}
+  - {fileID: 21300000, guid: f68ccfe61e255644d936adedfa7dacb0, type: 3}
+  - {fileID: 21300000, guid: 9e383357be523dd4fb69ab149ab0500c, type: 3}
+  - {fileID: 21300000, guid: de2825a714f169142adc1553b4b86f11, type: 3}
+  - {fileID: 21300000, guid: ad84ae68cc5b0ac47a8cefb2a1b95b30, type: 3}
+  - {fileID: 21300000, guid: 74624b78547996b4790a855314aade62, type: 3}
+  - {fileID: 21300000, guid: 584f2ba8e18d9f14384c35d56f4c1acb, type: 3}
+  - {fileID: 21300000, guid: f97641b80674a6249b42f3e8f7335054, type: 3}
+  - {fileID: 21300000, guid: cfb2f199cf1690349a2e1b133ab6df3c, type: 3}
+  - {fileID: 21300000, guid: 17c62bbadde0e374ea798f1bddb4c978, type: 3}
+  - {fileID: 21300000, guid: edf8bc5b64d233440a227c0640dde936, type: 3}
+  - {fileID: 21300000, guid: 59432e1cc4157d64d85fc4706c09dd09, type: 3}
+  - {fileID: 21300000, guid: 1717cc2c542ab2b4b9a54ac535acf332, type: 3}
+  - {fileID: 21300000, guid: aecf133c801c95842a936eb44c730716, type: 3}
+  - {fileID: 21300000, guid: a0e8eb4cff8e9e14cb7c9743d9159058, type: 3}
+  - {fileID: 21300000, guid: 8ba801ac464d27849a3360b31a63a0c5, type: 3}
+  - {fileID: 21300000, guid: 8804cb0d01d31f643aac179180a5d2fa, type: 3}
+  - {fileID: 21300000, guid: 8c9ee75d2e96f594090b081f6131b197, type: 3}
+  - {fileID: 21300000, guid: 9132981e80cc2d544885af2a9fcf0dd8, type: 3}
+  - {fileID: 21300000, guid: 5946a59e4e64d064688ddd96c9bec792, type: 3}
+  - {fileID: 21300000, guid: c699bb0f026661c46b1358f9b32444de, type: 3}
+  - {fileID: 21300000, guid: e13c7e2fd182bb24aa71ba6cff586667, type: 3}
+  - {fileID: 21300000, guid: 9091caff00dad3143869f590dee52216, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - asset_0002_top-menu-tab
+  - asset_0085_badge-frame-mask
+  - asset_0084_badge-frame
+  - Image_Offer
+  - asset_0062_exit-btn
+  - Image_Multiplayer_Orange
+  - asset_0035_name-bar-1
+  - asset_0083_Button_Arrow_Social
+  - raster
+  - Icon_Shop
+  - Frame_Title
+  - Image_SinglePlayer
+  - Frame_Toggle
+  - Icon_SettingsControls
+  - Frame_Badge
+  - Frame_MenuBar
+  - Rumble Arena Logo
+  - DjinnSkinA_transparent
+  - Image_WindowNameBar
+  - instaright
+  - Mask_MainMenu
+  - Image_Glow
+  - Border_MainMenu
+  - Icon_MainMenu
+  - Icon_SettingsSound
+  - Border_PlayerIcon
+  - Frame_Currency
+  - Icon_SettingsGeneral
+  - asset_0032_next-button
+  - Frame_Progressbar
+  - Icon_Settings
+  - news image placeholder
+  - Select_CPUDifficulty
+  - Frame_PlayerInfo
+  - Icon_SettingsDisplay
+  - asset_0026_progressbar-frame
+  - Button_Menu
+  - Button_MenuSelected
+  - Button_Plus_Down
+  - Button_Plus
+  - Icon_SilverCoin
+  m_Tag: RA_UI
+  m_IsVariant: 0

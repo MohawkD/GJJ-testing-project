@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Show:
     DatabaseNames:
+    - 
     - Basic
     - Drop
     - Fade
@@ -24,6 +25,7 @@ MonoBehaviour:
     - Slide
     DatabaseType: 1
     Databases:
+    - {fileID: 11400000, guid: 3d060a96ed7d71c459c4a284443ded47, type: 2}
     - {fileID: 11400000, guid: 8c6ef36a151e4be46b9976a8293cc70b, type: 2}
     - {fileID: 11400000, guid: b1959cc9692cfba478c5b24eb593a168, type: 2}
     - {fileID: 11400000, guid: 09c98895f36ad234fb31b37056deac15, type: 2}
