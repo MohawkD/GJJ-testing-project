@@ -62,19 +62,19 @@ public class Player : MonoBehaviour
            }
             
             //for keyboard test
-            // if(Input.GetKeyDown(KeyCode.A)) {
-            //     button_pressed = 0;
-            //     Debug.Log("P" + playerNumber + " A");
-            // } else if(Input.GetKeyDown(KeyCode.B)) {
-            //     button_pressed = 1;
-            //     Debug.Log("P" + playerNumber + " B");
-            // } else if(Input.GetKeyDown(KeyCode.X)) {
-            //     button_pressed = 2;
-            //     Debug.Log("P" + playerNumber + " X");
-            // } else if(Input.GetKeyDown(KeyCode.Y)) {
-            //     button_pressed = 3;
-            //     Debug.Log("P" + playerNumber + " Y");
-            // }
+//            if(Input.GetKeyDown(KeyCode.A)) {
+//                button_pressed = 0;
+//                Debug.Log("P" + playerNumber + " A");
+//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//                button_pressed = 1;
+//                Debug.Log("P" + playerNumber + " B");
+//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//                button_pressed = 2;
+//                Debug.Log("P" + playerNumber + " X");
+//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//                button_pressed = 3;
+//                Debug.Log("P" + playerNumber + " Y");
+//            }
 
             if(button_pressed >= 0)
             {
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
 
     private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection, out bool isBouncing)
     {
+        isBouncing = false;
         if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder)
         {
             isBouncing = true;

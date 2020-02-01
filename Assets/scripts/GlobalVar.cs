@@ -15,7 +15,6 @@ public static class GlobalVar
     public static string startLosingGame = "startLosingGame";
     public static string endGame = "endGame";
     public static string startBouncing = "startBouncing";
-    public static string finishBouncing = "finishBouncing";
     public static string startPowerUp = "startPowerUp";
     public static string finishPowerUp = "finishPowerUp";
 
