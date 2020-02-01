@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     
     public static GameManager instance = null;
     public Player m_player;
+    public Player m_player_2;
 
     private HexGridMap m_hexGridMap;
 
@@ -47,5 +48,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         m_player.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player.currentPosition);
+        m_player_2.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player_2.currentPosition);
     }
 }
