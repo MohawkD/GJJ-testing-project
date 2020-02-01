@@ -4482,10 +4482,10 @@ MonoBehaviour:
   - {fileID: 1944842036}
   - {fileID: 1691981941}
   buttonImages:
-  - {fileID: 21300000, guid: 7415f3dcf396a5e4283730e536467a6a, type: 3}
-  - {fileID: 21300000, guid: afb658406aa1ed546b4e2b1eb3b055db, type: 3}
-  - {fileID: 21300000, guid: 2d9248f1642ec974fbea6bf4eeab1e63, type: 3}
-  - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
+  - {fileID: 21300000, guid: 3a2e91f642d22e748bd2bfc43126cb63, type: 3}
+  - {fileID: 21300000, guid: 085f1ff20270ee740a8ce3e4013562a1, type: 3}
+  - {fileID: 21300000, guid: 5288b3c2249d79a469f3d0c4e270ab9d, type: 3}
+  - {fileID: 21300000, guid: 3c50a5b839863d04890dd1c267cad55b, type: 3}
   bounceAmount: 2
   bounceBorder: 5
   winDistance: 5
