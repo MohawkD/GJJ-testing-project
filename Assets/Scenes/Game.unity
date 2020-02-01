@@ -1639,8 +1639,8 @@ MonoBehaviour:
   timeFrozen: 5
   speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
-  otherPlayer: {fileID: 1855281096}
   Speed: 5
+  otherPlayer: {fileID: 1855281096}
 --- !u!95 &1526318008
 Animator:
   serializedVersion: 3
@@ -1651,7 +1651,7 @@ Animator:
   m_GameObject: {fileID: 1526318006}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 329f6159040e1104a924d4bdc3b67ffc, type: 2}
+  m_Controller: {fileID: 22100000, guid: 46a13f41b7d59834b901303d0151463d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1699,8 +1699,9 @@ SpriteRenderer:
   m_SortingLayerID: 1069570135
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c4bc5a8c2c387b44ab8139398fb3494, type: 3}
-  m_Color: {r: 0.29019606, g: 0.84404343, b: 0.94509804, a: 1}
+  m_Sprite: {fileID: -4541966204632092943, guid: a3b345dd8b7d2bc4fb49614e44c889f9,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1719,7 +1720,7 @@ Transform:
   m_GameObject: {fileID: 1526318006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1827,9 +1828,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1855281101}
-  - component: {fileID: 1855281100}
   - component: {fileID: 1855281099}
+  - component: {fileID: 1855281100}
   - component: {fileID: 1855281098}
   - component: {fileID: 1855281096}
   - component: {fileID: 1855281097}
@@ -1879,8 +1879,8 @@ MonoBehaviour:
   timeFrozen: 5
   speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
+  Speed: 2
   otherPlayer: {fileID: 1526318007}
-  Speed: 5
 --- !u!212 &1855281097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1920,8 +1920,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c4bc5a8c2c387b44ab8139398fb3494, type: 3}
-  m_Color: {r: 0.9528302, g: 0.23820755, b: 0.23820755, a: 1}
+  m_Sprite: {fileID: 5051426456420596689, guid: 5f21655c80c9b2e48a256420a9582afd,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1950,34 +1951,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1855281099
-MonoBehaviour:
+--- !u!4 &1855281099
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855281095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &1855281100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1986,25 +1973,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855281095}
   m_CullTransparentMesh: 0
---- !u!224 &1855281101
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855281095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 32, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1855281102
 LineRenderer:
   m_ObjectHideFlags: 0
