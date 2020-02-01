@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private bool isFrozen = false;
     private int correctInputs = 0;
     private Animator animator;
+    private float time = 0.0f;
 
     private NewWire wire;
 
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour
         int registeredPresses = 0;
         correctInputs = 0;
 
-        while(registeredPresses < 3)
+        while(registeredPresses < 3 && !isFrozen)
         {
             int button_pressed = -1;
            if(Input.GetButtonDown("P" + playerNumber + " A")) {
@@ -266,13 +267,23 @@ public class Player : MonoBehaviour
             easyInputsDone = 0;
             isSpedUp = false;
         }
+
         if(isFrozen) {
-            foreach(Button button in buttons) {
-                button.gameObject.SetActive(false);
+            if(time == 0) {
+                foreach(Button button in buttons) {
+                    button.GetComponent<Image>().color = new Color32(200,200,200,255);
+                }
             }
-            //foreach(Button button in buttons) {
-                //button.gameObject.SetActive(true);
-            //}
+
+            time += Time.deltaTime;
+
+            if(time >= timeFrozen) {
+                isFrozen = false;
+                foreach(Button button in buttons) {
+                    button.GetComponent<Image>().color = new Color32(255,255,255,255);
+                }
+                time = 0.0f;
+            }
         }
     }
 }
