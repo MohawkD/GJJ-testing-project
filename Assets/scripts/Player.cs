@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     private int easyInputsDone = 0;
     private bool spedUp = false;
     private Animator animator;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
     {
         bool done = false;
         int index = 0;
-        while(!done) // essentially a "while true", but with a bool to break out naturally
+        int registeredPresses = 0;
+        while(registeredPresses < 3)
         {
             int button_pressed = -1;
            if(Input.GetButtonDown("P" + playerNumber + " A")) {
@@ -80,16 +81,12 @@ public class Player : MonoBehaviour
 
             if(button_pressed >= 0)
             {
-                givenInputs[index] = button_pressed;
-                index++;
-                if(index > 2) {
-                    done = true;
-                    Debug.Log("P" + playerNumber + " player input received");
-                }
+                givenInputs[registeredPresses] = button_pressed;
+                registeredPresses++;
             }
-            
             yield return null;
         }
+        Debug.Log("P" + playerNumber + " player input received");
     }
 
     private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection, out bool isBouncing)
