@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public int playerNumber = 1;
-    public GameObject[] buttonImages;
+    public Button[] buttons;
+    public Sprite[] buttonImages;
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
@@ -82,18 +84,10 @@ public class Player : MonoBehaviour
     private void DisplayInputs()
     {
         for(int i = 0; i < 3; i++) {
-            //int button_index = Random.Range(0, 3);
-            int button_index = i;
+            int button_index = Random.Range(0, 3);
             requiredInputs[i] = button_index;
-            DisplayButton(button_index, i);
+            buttons[i].GetComponent<Image>().sprite = buttonImages[button_index];
         }
-    }
-
-    private void DisplayButton(int button_index, int position_index)
-    {
-        buttonImages[button_index].SetActive(true);
-        buttonImages[button_index].transform.localPosition = new Vector3(20 * position_index, 0, 0);
-    
     }
 
     // Update is called once per frame
