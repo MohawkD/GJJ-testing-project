@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         while(registeredPresses < 3)
         {
             if(isFrozen) {
-                continue;
+                yield return new WaitForSeconds(timeFrozen);
             }
 
             int button_pressed = -1;
@@ -274,21 +274,23 @@ public class Player : MonoBehaviour
             isSpedUp = false;
         }
 
-        if(isFrozen) {
-            if(time == 0) {
-                foreach(Button button in buttons) {
-                    button.GetComponent<Image>().color = new Color32(200,200,200,255);
-                }
+        if(isFrozen && time == 0) {
+            foreach(Button button in buttons) {
+                button.GetComponent<Image>().color = new Color32(200,200,200,255);
             }
+        }
 
+        if(!isFrozen && time > 0) {
+            foreach(Button button in buttons) {
+                button.GetComponent<Image>().color = new Color32(255,255,255,255);
+            }
+            time = 0.0f;
+        }
+
+        if(isFrozen){
             time += Time.deltaTime;
-
             if(time >= timeFrozen) {
                 isFrozen = false;
-                foreach(Button button in buttons) {
-                    button.GetComponent<Image>().color = new Color32(255,255,255,255);
-                }
-                time = 0.0f;
             }
         }
     }
