@@ -16,19 +16,21 @@ public class Player : MonoBehaviour
     public int bounceAmount = 2;
     public int bounceBorder = 5;
     public int winDistance = 10;
-
+    public float timeFrozen = 5.0f;
+    public int speedUpBoost = 3;
+    
     public Vector2Int currentPosition;
     public Player otherPlayer;
 //    public GameObject wirePrefab;
-    public float freezeTime = 5.0f;
-    public int speedUpBoost = 3;
+
     public float Speed;
 
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
 //    private Wire currentWire = null;
     private int easyInputsDone = 0;
-    private bool spedUp = false;
+    private bool isSpedUp = false;
+    private bool isFrozen = false;
     private int correctInputs = 0;
     private Animator animator;
 
@@ -163,13 +165,9 @@ public class Player : MonoBehaviour
         return moveDirection;
     }
 
-    public IEnumerator freezePlayer() {
-        yield return new WaitForSeconds(freezeTime);
-    }
-
     private void freezeOpponent()
     {
-        otherPlayer.freezePlayer();
+        otherPlayer.isFrozen = true;
     }
 
     private void checkPowerUp(Vector2Int currentPosition) {
@@ -178,7 +176,7 @@ public class Player : MonoBehaviour
             Debug.Log("Pickup freeze");
             freezeOpponent();
         } else if(content == "speed") {
-            spedUp = true;
+            isSpedUp = true;
         }
     }
 
@@ -233,7 +231,7 @@ public class Player : MonoBehaviour
 
         for(int i = 0; i < 3; i++) {
             int button_index = 0;
-            if(!spedUp) {
+            if(!isSpedUp) {
                 button_index = Random.Range(0, 4);
             } else {
                 button_index = easyButtonIndices[easy_index, i];
@@ -242,7 +240,7 @@ public class Player : MonoBehaviour
             buttons[i].GetComponent<Image>().sprite = buttonImages[button_index];
         }
 
-        if(spedUp) {
+        if(isSpedUp) {
             easyInputsDone++;
         }
     }
@@ -263,10 +261,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spedUp && easyInputsDone > speedUpBoost) {
+        if(isSpedUp && easyInputsDone > speedUpBoost) {
             Debug.Log("speed up over");
             easyInputsDone = 0;
-            spedUp = false;
+            isSpedUp = false;
+        }
+        if(isFrozen) {
+            foreach(Button button in buttons) {
+                button.gameObject.SetActive(false);
+            }
+            //foreach(Button button in buttons) {
+                //button.gameObject.SetActive(true);
+            //}
         }
     }
 }

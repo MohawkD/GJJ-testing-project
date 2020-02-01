@@ -4499,10 +4499,10 @@ MonoBehaviour:
   bounceAmount: 2
   bounceBorder: 5
   winDistance: 5
+  timeFrozen: 5
+  speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
   otherPlayer: {fileID: 1853915864}
-  freezeTime: 5
-  speedUpBoost: 3
   Speed: 5
 --- !u!212 &1205890585
 SpriteRenderer:
@@ -4585,7 +4585,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpImages:
   - {fileID: 6354150276909252911, guid: 5e3624dd61e594840a588e238a91fcdd, type: 3}
-  powerUpSpawnTime: 10
+  - {fileID: 7506607422692124883, guid: 0e1a627dea117094fa4c0fed7c50fba3, type: 3}
+  powerUpSpawnTime: 5
 --- !u!4 &1442837133
 Transform:
   m_ObjectHideFlags: 0
@@ -5044,10 +5045,10 @@ MonoBehaviour:
   bounceAmount: 2
   bounceBorder: 5
   winDistance: 5
+  timeFrozen: 5
+  speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
   otherPlayer: {fileID: 1205890584}
-  freezeTime: 5
-  speedUpBoost: 3
   Speed: 5
 --- !u!212 &1853915865
 SpriteRenderer:

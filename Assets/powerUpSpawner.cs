@@ -13,6 +13,8 @@ public class powerUpSpawner : MonoBehaviour
     private Dictionary<Vector2Int, GameObject> spawnedPowerUps = new Dictionary<Vector2Int, GameObject>();
     public float powerUpSpawnTime = 5.0f;
 
+    private string[] powerUpNames = {"speed", "freeze"};
+
     void Awake()
     {
         if (instance == null)
@@ -65,9 +67,10 @@ public class powerUpSpawner : MonoBehaviour
     private void SpawnPowerUp()
     {
         Vector2Int spawnLocation = getSpawnLocation();
-        powerUpLocations.Add(spawnLocation, "speed");
+        int powerUpIndex = Random.Range(0, powerUpNames.Length);
+        powerUpLocations.Add(spawnLocation, powerUpNames[powerUpIndex]);
         Vector3 spawn_transform = GameManager.instance.getPosition(spawnLocation);
-        GameObject spawnedPowerUp = Instantiate(powerUpImages[0], spawn_transform, Quaternion.identity);
+        GameObject spawnedPowerUp = Instantiate(powerUpImages[powerUpIndex], spawn_transform, Quaternion.identity);
         spawnedPowerUps.Add(spawnLocation, spawnedPowerUp);
         Debug.Log("Power up spawned");
     }
