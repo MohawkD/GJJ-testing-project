@@ -41,34 +41,34 @@ public class Player : MonoBehaviour
         while(!done) // essentially a "while true", but with a bool to break out naturally
         {
             int button_pressed = -1;
-//            if(Input.GetButtonDown("P" + playerNumber + " A")) {
-//                button_pressed = 0;
-//                Debug.Log("P" + playerNumber + " A");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-//                button_pressed = 1;
-//                Debug.Log("P" + playerNumber + " B");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-//                button_pressed = 2;
-//                Debug.Log("P" + playerNumber + " X");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-//                button_pressed = 3;
-//                Debug.Log("P" + playerNumber + " Y");
-//            }
+           if(Input.GetButtonDown("P" + playerNumber + " A")) {
+               button_pressed = 0;
+               Debug.Log("P" + playerNumber + " A");
+           } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
+               button_pressed = 1;
+               Debug.Log("P" + playerNumber + " B");
+           } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
+               button_pressed = 2;
+               Debug.Log("P" + playerNumber + " X");
+           } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
+               button_pressed = 3;
+               Debug.Log("P" + playerNumber + " Y");
+           }
             
             //for keyboard test
-            if(Input.GetKeyDown(KeyCode.A)) {
-                button_pressed = 0;
-                Debug.Log("P" + playerNumber + " A");
-            } else if(Input.GetKeyDown(KeyCode.B)) {
-                button_pressed = 1;
-                Debug.Log("P" + playerNumber + " B");
-            } else if(Input.GetKeyDown(KeyCode.X)) {
-                button_pressed = 2;
-                Debug.Log("P" + playerNumber + " X");
-            } else if(Input.GetKeyDown(KeyCode.Y)) {
-                button_pressed = 3;
-                Debug.Log("P" + playerNumber + " Y");
-            }
+            // if(Input.GetKeyDown(KeyCode.A)) {
+            //     button_pressed = 0;
+            //     Debug.Log("P" + playerNumber + " A");
+            // } else if(Input.GetKeyDown(KeyCode.B)) {
+            //     button_pressed = 1;
+            //     Debug.Log("P" + playerNumber + " B");
+            // } else if(Input.GetKeyDown(KeyCode.X)) {
+            //     button_pressed = 2;
+            //     Debug.Log("P" + playerNumber + " X");
+            // } else if(Input.GetKeyDown(KeyCode.Y)) {
+            //     button_pressed = 3;
+            //     Debug.Log("P" + playerNumber + " Y");
+            // }
 
             if(button_pressed >= 0)
             {
@@ -148,8 +148,6 @@ public class Player : MonoBehaviour
             yield return waitForKeyPresses();
 
             Vector2Int moveDirection = findMoveDirection();
-            Debug.Log("Move dir: " + moveDirection);
-
             Vector2Int newPosition = currentPosition + moveDirection;
             newPosition = checkIfBounce(newPosition, moveDirection);
             currentPosition = newPosition;
