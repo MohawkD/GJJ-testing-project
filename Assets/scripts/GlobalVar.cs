@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class GlobalVar
 {
+    //global var for player control
+    //unit: second
+    public static float waitTimeEachMove = 1;
+    
     //animator parameters
     public static string startMoving = "startMoving";
     public static string finishMoving = "finishMoving";
