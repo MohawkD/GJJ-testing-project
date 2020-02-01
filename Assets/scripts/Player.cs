@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
-
+    public Player otherPlayer;
     public GameObject wirePrefab;
 
     private Wire currentWire = null;
@@ -79,6 +79,11 @@ public class Player : MonoBehaviour
             moveDirection = -1 * bounceAmount * moveDirection;
             newPosition = currentPosition + moveDirection;
             Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
+        }
+        if(newPosition == otherPlayer.currentPosition) {
+            moveDirection = -1 * bounceAmount * moveDirection;
+            newPosition = currentPosition + moveDirection;
+            Debug.Log("Player " + playerNumber + " tried of move on another player's tile and bounced");
         }
         return newPosition;
     }
