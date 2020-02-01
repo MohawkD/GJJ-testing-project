@@ -74,6 +74,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection) {
+        if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder) {
+            moveDirection = -1 * bounceAmount * moveDirection;
+            newPosition = currentPosition + moveDirection;
+            Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
+        }
+        return newPosition;
+    }
     private IEnumerator Move()
     {
         while(true) {
@@ -106,12 +114,7 @@ public class Player : MonoBehaviour
                 moveDirection = moveDirection + Vector2Int.left; 
             }
             Vector2Int newPosition = currentPosition + moveDirection;
-
-            if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder) {
-                moveDirection = -1 * bounceAmount * moveDirection;
-                newPosition = currentPosition + moveDirection;
-                Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
-            }
+            newPosition = checkIfBounce(newPosition, moveDirection);
             currentPosition = newPosition;
             Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
             

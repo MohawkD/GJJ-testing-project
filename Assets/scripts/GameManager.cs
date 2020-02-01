@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         m_player.currentPosition = Vector2Int.zero;
-        m_player_2.currentPosition = Vector2Int.zero;
+        m_player_2.currentPosition = Vector2Int.left;
     }
 
     // Start is called before the first frame update
@@ -50,6 +50,6 @@ public class GameManager : MonoBehaviour
 //        m_player.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player.currentPosition);
 //        m_player_2.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player_2.currentPosition);
         m_player.UpdatePosition(m_hexGridMap.GetGridPosition(m_player.currentPosition));
-        //m_player_2.UpdatePosition(m_hexGridMap.GetGridPosition(m_player_2.currentPosition));
+        m_player_2.UpdatePosition(m_hexGridMap.GetGridPosition(m_player_2.currentPosition));
     }
 }
