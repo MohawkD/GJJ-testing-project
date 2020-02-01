@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public int playerNumber = 1;
     public Button[] buttons;
     public Sprite[] buttonImages;
-    public int bounce_amount = 2;
+    public int bounceAmount = 2;
+    public int bounceBorder = 5;
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
@@ -88,20 +89,26 @@ public class Player : MonoBehaviour
             }
             
             Vector2Int moveDirection = Vector2Int.zero;
+            bool adjustGridCoordinate = false;
             if(correctInputs == 3) {
                 moveDirection = Vector2Int.right;
             } else if(correctInputs == 2) {
+                adjustGridCoordinate = true;
                 moveDirection = Vector2Int.one;
             } else if(correctInputs == 1) {
+                adjustGridCoordinate = true;
                 moveDirection = Vector2Int.up;
             } else {
                 moveDirection = Vector2Int.left;
             }
             
+            if(adjustGridCoordinate && currentPosition.y % 2 == 0) {
+                moveDirection = moveDirection + Vector2Int.left; 
+            }
             Vector2Int newPosition = currentPosition + moveDirection;
 
-            if(Mathf.Abs(newPosition.x) > 3 || Mathf.Abs(newPosition.y) > 3) {
-                moveDirection = -1 * bounce_amount * moveDirection;
+            if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder) {
+                moveDirection = -1 * bounceAmount * moveDirection;
                 newPosition = currentPosition + moveDirection;
                 Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
             }
@@ -118,7 +125,7 @@ public class Player : MonoBehaviour
     private void DisplayInputs()
     {
         for(int i = 0; i < 3; i++) {
-            int button_index = Random.Range(0, 3);
+            int button_index = Random.Range(0, 4);
             requiredInputs[i] = button_index;
             buttons[i].GetComponent<Image>().sprite = buttonImages[button_index];
         }
