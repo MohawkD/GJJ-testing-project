@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &122823877
 RectTransform:
   m_ObjectHideFlags: 0
@@ -323,7 +323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &201492407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &853539887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4986,7 +4986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1642755956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5181,7 +5181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1691981940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5323,11 +5323,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
   bounceAmount: 2
   bounceBorder: 5
+  winDistance: 3
   currentPosition: {x: 0, y: 0}
   otherPlayer: {fileID: 2024513605}
   wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
     type: 3}
-  Speed: 0
+  Speed: 5
 --- !u!212 &1853915865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5368,7 +5369,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c4bc5a8c2c387b44ab8139398fb3494, type: 3}
-  m_Color: {r: 0.9433962, g: 0.28924885, b: 0.28924885, a: 1}
+  m_Color: {r: 0.29019606, g: 0.84404343, b: 0.94509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5525,7 +5526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1944842035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5889,6 +5890,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
   bounceAmount: 2
   bounceBorder: 5
+  winDistance: 3
   currentPosition: {x: 0, y: 0}
   otherPlayer: {fileID: 1853915864}
   wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
