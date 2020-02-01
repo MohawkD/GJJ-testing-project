@@ -6,7 +6,7 @@ public static class GlobalVar
 {
     //global var for player control
     //unit: second
-    public static float waitTimeEachMove = 1;
+    public static float waitTimeEachMove = 2;
     
     //animator parameters
     public static string startMoving = "startMoving";
@@ -17,5 +17,7 @@ public static class GlobalVar
     public static string startBouncing = "startBouncing";
     public static string startPowerUp = "startPowerUp";
     public static string finishPowerUp = "finishPowerUp";
+
+    public static string isMoving = "isMoving";
 
 }

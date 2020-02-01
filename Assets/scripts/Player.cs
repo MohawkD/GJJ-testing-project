@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
     public int speedUpBoost = 3;
     
     public Vector2Int currentPosition;
-    public Player otherPlayer;
+
 //    public GameObject wirePrefab;
 
     public float Speed;
@@ -36,6 +38,9 @@ public class Player : MonoBehaviour
     private Animator animator;
     private NewWire wire;
     
+    [HideInInspector]
+    public Player otherPlayer;
+
     private void Awake()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
@@ -186,8 +191,7 @@ public class Player : MonoBehaviour
     {
         bool hasPlayerWon = false;
         while(!hasPlayerWon) {
-            //move stop
-            animator.SetTrigger(GlobalVar.finishMoving);
+            
             
             DisplayInputs();
             yield return waitForKeyPresses();
@@ -206,18 +210,19 @@ public class Player : MonoBehaviour
 //            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
 //            currentWire = go.GetComponent<Wire>();
 
-            if (isBouncing)
-            {
-                //bounce anim
-                animator.SetTrigger(GlobalVar.startBouncing);
-            }
-            else
-            {
-                //move anim
-                animator.SetTrigger(GlobalVar.startMoving);
-            }
+//            if (isBouncing)
+//            {
+//                //bounce anim
+//                animator.SetTrigger(GlobalVar.startBouncing);
+//            }
+//            else
+//            {
+//                //move anim
+//                animator.SetTrigger(GlobalVar.startMoving);
+//            }
             
             wire.AddWireNode();
+            
             
             yield return new WaitForSeconds(GlobalVar.waitTimeEachMove);
         }
@@ -249,6 +254,17 @@ public class Player : MonoBehaviour
 
     public void UpdatePosition(Vector3 pos)
     {
+        if (Vector3.Distance(transform.position, pos) >= 0.01)
+        {
+            animator.SetBool(GlobalVar.isMoving, true);
+
+        }
+        else
+        {
+            animator.SetBool(GlobalVar.isMoving, false);
+
+        }
+        
         float step = Speed * Time.deltaTime;
 
         transform.position = Vector3.Lerp(transform.position, pos, step);
