@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 //    private Wire currentWire = null;
     private int easyInputsDone = 0;
     private bool isSpedUp = false;
-    private bool isFrozen = false;
+    public bool isFrozen = false;
     private int correctInputs = 0;
     
     private Animator animator;
@@ -63,22 +63,26 @@ public class Player : MonoBehaviour
         int registeredPresses = 0;
         correctInputs = 0;
 
-        while(registeredPresses < 3 && !isFrozen)
+        while(registeredPresses < 3)
         {
+            if(isFrozen) {
+                continue;
+            }
+
             int button_pressed = -1;
-           if(Input.GetButtonDown("P" + playerNumber + " A")) {
-               button_pressed = 0;
-               Debug.Log("P" + playerNumber + " A");
-           } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-               button_pressed = 1;
-               Debug.Log("P" + playerNumber + " B");
-           } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-               button_pressed = 2;
-               Debug.Log("P" + playerNumber + " X");
-           } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-               button_pressed = 3;
-               Debug.Log("P" + playerNumber + " Y");
-           }
+            if(Input.GetButtonDown("P" + playerNumber + " A")) {
+                button_pressed = 0;
+                Debug.Log("P" + playerNumber + " A");
+            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
+                button_pressed = 1;
+                Debug.Log("P" + playerNumber + " B");
+            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
+                button_pressed = 2;
+                Debug.Log("P" + playerNumber + " X");
+            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
+                button_pressed = 3;
+                Debug.Log("P" + playerNumber + " Y");
+            }
             
             //for keyboard test
 //            if(Input.GetKeyDown(KeyCode.A)) {
