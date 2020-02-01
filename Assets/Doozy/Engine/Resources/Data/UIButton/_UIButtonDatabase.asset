@@ -18,7 +18,9 @@ MonoBehaviour:
   - General
   - TestUI
   - Example
+  - Cat-trail-game-buttons
   Categories:
   - {fileID: 11400000, guid: b250fc97cc6f0ca4c81de9b8163a4d0e, type: 2}
   - {fileID: 11400000, guid: 4119487614607a64f995475b401eaf08, type: 2}
   - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
+  - {fileID: 11400000, guid: d518497b16472cb4cad0de14257e1d47, type: 2}
