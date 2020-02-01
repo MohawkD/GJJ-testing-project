@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2348476685
+    locked: 0
+  - name: Hexagon
+    uniqueID: 230016525
+    locked: 0
+  - name: Wires
+    uniqueID: 384262499
+    locked: 0
+  - name: Player
+    uniqueID: 1069570135
+    locked: 0
+  - name: UI
+    uniqueID: 2407780017
+    locked: 0
