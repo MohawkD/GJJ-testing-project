@@ -14,15 +14,16 @@ public class Wire : MonoBehaviour
 
     void Start()
     {
+        m_lineRenderer.positionCount = 1;
         m_lineRenderer.SetPosition(0, this.transform.position);
     }
 
     // Update is called once per frame
-    void Update()
+    public void IncreaseTo(Vector3 pos)
     {
         var positionCount = m_lineRenderer.positionCount;
         positionCount++;
         m_lineRenderer.positionCount = positionCount;
-        m_lineRenderer.SetPosition(positionCount-1, this.transform.position);
+        m_lineRenderer.SetPosition(positionCount-1, pos);
     }
 }

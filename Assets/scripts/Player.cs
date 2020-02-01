@@ -8,10 +8,14 @@ public class Player : MonoBehaviour
     public int playerNumber = 1;
     public Button[] buttons;
     public Sprite[] buttonImages;
+    public int bounce_amount = 2;
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
 
+    public GameObject wirePrefab;
+
+    private Wire currentWire = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,21 @@ public class Player : MonoBehaviour
                 button_pressed = 3;
                 Debug.Log("P" + playerNumber + " Y");
             }
+            
+            //for keyboard test
+//            if(Input.GetKeyDown(KeyCode.A)) {
+//                button_pressed = 0;
+//                Debug.Log("P" + playerNumber + " A");
+//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//                button_pressed = 1;
+//                Debug.Log("P" + playerNumber + " B");
+//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//                button_pressed = 2;
+//                Debug.Log("P" + playerNumber + " X");
+//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//                button_pressed = 3;
+//                Debug.Log("P" + playerNumber + " Y");
+//            }
 
             if(button_pressed >= 0)
             {
@@ -49,6 +68,7 @@ public class Player : MonoBehaviour
                     Debug.Log("P" + playerNumber + " player input received");
                 }
             }
+            
             yield return null;
         }
     }
@@ -67,16 +87,30 @@ public class Player : MonoBehaviour
                 }
             }
             
+            Vector2Int moveDirection = Vector2Int.zero;
             if(correctInputs == 3) {
-                currentPosition = currentPosition + Vector2Int.right;
+                moveDirection = Vector2Int.right;
             } else if(correctInputs == 2) {
-                currentPosition = currentPosition + Vector2Int.one;
+                moveDirection = Vector2Int.one;
             } else if(correctInputs == 1) {
-                currentPosition = currentPosition + Vector2Int.up;
+                moveDirection = Vector2Int.up;
             } else {
-                currentPosition = currentPosition + Vector2Int.left;
+                moveDirection = Vector2Int.left;
             }
+            
+            Vector2Int newPosition = currentPosition + moveDirection;
+
+            if(Mathf.Abs(newPosition.x) > 3 || Mathf.Abs(newPosition.y) > 3) {
+                moveDirection = -1 * bounce_amount * moveDirection;
+                newPosition = currentPosition + moveDirection;
+                Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
+            }
+            currentPosition = newPosition;
             Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
+            
+            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
+            currentWire = go.GetComponent<Wire>();
+            
             yield return new WaitForSeconds(1);
         }
     }
@@ -90,24 +124,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void UpdatePosition(Vector3 pos)
+    {
+        this.transform.position = pos;
+        
+        if (currentWire != null) 
+        {
+            currentWire.IncreaseTo(pos);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(Input.GetButtonDown("P" + playerNumber + " A")) {
-            Debug.Log("P" + playerNumber + " A");
-        }
 
-        if(Input.GetButtonDown("P" + playerNumber + " X")) {
-            Debug.Log("P" + playerNumber + " X");
-        }
-
-        if(Input.GetButtonDown("P" + playerNumber + " B")) {
-            Debug.Log("P" + playerNumber + " B");
-        }
-        if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-            Debug.Log("P" + playerNumber + " Y");
-        }
-        */
     }
 }
