@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +24,13 @@ public class Player : MonoBehaviour
     private Wire currentWire = null;
     private int easyInputsDone = 0;
     private bool spedUp = false;
-
+    private Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        
         Invoke("startGame", 2.0f);
     }
 
@@ -60,19 +64,19 @@ public class Player : MonoBehaviour
            }
             
             //for keyboard test
-            // if(Input.GetKeyDown(KeyCode.A)) {
-            //     button_pressed = 0;
-            //     Debug.Log("P" + playerNumber + " A");
-            // } else if(Input.GetKeyDown(KeyCode.B)) {
-            //     button_pressed = 1;
-            //     Debug.Log("P" + playerNumber + " B");
-            // } else if(Input.GetKeyDown(KeyCode.X)) {
-            //     button_pressed = 2;
-            //     Debug.Log("P" + playerNumber + " X");
-            // } else if(Input.GetKeyDown(KeyCode.Y)) {
-            //     button_pressed = 3;
-            //     Debug.Log("P" + playerNumber + " Y");
-            // }
+//            if(Input.GetKeyDown(KeyCode.A)) {
+//                button_pressed = 0;
+//                Debug.Log("P" + playerNumber + " A");
+//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//                button_pressed = 1;
+//                Debug.Log("P" + playerNumber + " B");
+//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//                button_pressed = 2;
+//                Debug.Log("P" + playerNumber + " X");
+//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//                button_pressed = 3;
+//                Debug.Log("P" + playerNumber + " Y");
+//            }
 
             if(button_pressed >= 0)
             {
@@ -88,13 +92,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection) {
-        if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder) {
+    private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection, out bool isBouncing)
+    {
+        isBouncing = false;
+        if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder)
+        {
+            isBouncing = true;
             moveDirection = -1 * bounceAmount * moveDirection;
             newPosition = currentPosition + moveDirection;
             Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
         }
-        if(newPosition == otherPlayer.currentPosition) {
+        if(newPosition == otherPlayer.currentPosition)
+        {
+            isBouncing = true;
             moveDirection = -1 * bounceAmount * moveDirection;
             newPosition = currentPosition + moveDirection;
             Debug.Log("Player " + playerNumber + " tried of move on another player's tile and bounced");
@@ -111,6 +121,7 @@ public class Player : MonoBehaviour
                 button.gameObject.SetActive(false);
             }
             StopCoroutine(Move());
+            //TODO: winning animation
             Debug.Log("Player " + playerNumber + " wins!");
             return true;
         }
@@ -167,12 +178,17 @@ public class Player : MonoBehaviour
     {
         bool hasPlayerWon = false;
         while(!hasPlayerWon) {
+            //move stop
+            animator.SetTrigger(GlobalVar.finishMoving);
+            
             DisplayInputs();
             yield return waitForKeyPresses();
 
             Vector2Int moveDirection = findMoveDirection();
             Vector2Int newPosition = currentPosition + moveDirection;
-            newPosition = checkIfBounce(newPosition, moveDirection);
+            bool isBouncing = false;
+            newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
+            
             currentPosition = newPosition;
             Debug.Log("New pos: " + currentPosition);
 
@@ -181,8 +197,19 @@ public class Player : MonoBehaviour
 
             GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
             currentWire = go.GetComponent<Wire>();
+
+            if (isBouncing)
+            {
+                //bounce anim
+                animator.SetTrigger(GlobalVar.startBouncing);
+            }
+            else
+            {
+                //move anim
+                animator.SetTrigger(GlobalVar.startMoving);
+            }
             
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(GlobalVar.waitTimeEachMove);
         }
     }
 

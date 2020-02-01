@@ -10,8 +10,10 @@ public class Wire : MonoBehaviour
     private void Awake()
     {
         m_lineRenderer = GetComponent<LineRenderer>();
+        m_lineRenderer.startWidth = 8;
+        m_lineRenderer.endWidth = 8;
         //color of wire
-        m_lineRenderer.material.color = new Color(88, 88, 88);
+//        m_lineRenderer.material.color = Color.blue;
     }
 
     void Start()
