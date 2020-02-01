@@ -5,11 +5,29 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int playerNumber = 1;
-    public GameObject[] buttonPositions;
+    public GameObject[] buttonImages;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Random.Range(0, 3));
+        DisplayInputs();
+    }
+
+
+    int DisplayInputs()
+    {
+        for(int i = 0; i < 3; i++) {
+            int button_index = Random.Range(0, 3);
+            DisplayButton(i, i);
+        }
+        return(0);
+    }
+
+    void DisplayButton(int button_index, int position_index)
+    {
+        buttonImages[button_index].SetActive(true);
+        buttonImages[button_index].transform.position = new Vector3(buttonImages[button_index].transform.position.x + (20 * position_index), buttonImages[button_index].transform.position.y, buttonImages[button_index].transform.position.z);
+    
     }
 
     // Update is called once per frame
