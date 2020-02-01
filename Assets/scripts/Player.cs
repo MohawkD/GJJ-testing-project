@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
             if(button_pressed >= 0)
             {
                 givenInputs[registeredPresses] = button_pressed;
+                buttons[registeredPresses].GetComponent<Image>().color = new Color32(200,200,200,255);
                 registeredPresses++;
             }
             yield return null;
@@ -219,6 +220,9 @@ public class Player : MonoBehaviour
 
     private void DisplayInputs()
     {
+        for(int i = 0; i < 3; i++) {
+            buttons[i].GetComponent<Image>().color = new Color32(255,255,255,255);
+        }
         int[, ] easyButtonIndices = new int[2, 3] {{0, 0, 0}, {3, 0, 3}};
         int easy_index = Random.Range(0, easyButtonIndices.GetLength(0));
 
