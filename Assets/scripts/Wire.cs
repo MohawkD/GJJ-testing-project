@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Wire : MonoBehaviour
 {
+    
     private LineRenderer m_lineRenderer;
     // Start is called before the first frame update
     private void Awake()
