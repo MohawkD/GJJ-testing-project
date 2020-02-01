@@ -17,3 +17,5 @@ MonoBehaviour:
   Names:
   - Start-screen
   - Winner-screen
+  - Finish-screen
+  - Ingame-screen
