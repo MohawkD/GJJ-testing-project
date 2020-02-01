@@ -16,18 +16,20 @@ public class Player : MonoBehaviour
 
     public Vector2Int currentPosition;
     public Player otherPlayer;
-    public GameObject wirePrefab;
+//    public GameObject wirePrefab;
     public float freezeTime = 5.0f;
     public int speedUpBoost = 3;
     public float Speed;
 
-    private Wire currentWire = null;
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
+//    private Wire currentWire = null;
     private int easyInputsDone = 0;
     private bool spedUp = false;
     private int correctInputs = 0;
     private Animator animator;
+
+    private NewWire wire;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         
         Invoke("startGame", 2.0f);
+
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        wire = new NewWire(lineRenderer, transform.position);
     }
 
 
@@ -195,8 +200,8 @@ public class Player : MonoBehaviour
             checkPowerUp(currentPosition);
             hasPlayerWon = checkIfWin(currentPosition);
 
-            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
-            currentWire = go.GetComponent<Wire>();
+//            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
+//            currentWire = go.GetComponent<Wire>();
 
             if (isBouncing)
             {
@@ -208,6 +213,8 @@ public class Player : MonoBehaviour
                 //move anim
                 animator.SetTrigger(GlobalVar.startMoving);
             }
+            
+            wire.AddWireNode();
             
             yield return new WaitForSeconds(GlobalVar.waitTimeEachMove);
         }
@@ -242,11 +249,12 @@ public class Player : MonoBehaviour
         float step = Speed * Time.deltaTime;
 
         transform.position = Vector3.Lerp(transform.position, pos, step);
+        wire.IncreaseTo(transform.position);
         
-        if (currentWire != null) 
-        {
-            currentWire.IncreaseTo(transform.position);
-        }
+//        if (currentWire != null) 
+//        {
+//            currentWire.IncreaseTo(transform.position);
+//        }
     }
 
     // Update is called once per frame

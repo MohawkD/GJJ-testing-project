@@ -29,5 +29,6 @@ public class Wire : MonoBehaviour
         positionCount++;
         m_lineRenderer.positionCount = positionCount;
         m_lineRenderer.SetPosition(positionCount-1, pos);
+        
     }
 }
