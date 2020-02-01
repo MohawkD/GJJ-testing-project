@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -16,8 +15,8 @@ public class Player : MonoBehaviour
     public Sprite[] rightButtonImages;
 
     public int bounceAmount = 2;
-    public int bounceBorder = 5;
-    public int winDistance = 10;
+    public int bounceBorder = 20;
+//    public int winDistance = 10;
     public float timeFrozen = 5.0f;
     public int speedUpBoost = 3;
     
@@ -42,7 +41,11 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public Player otherPlayer;
 
-    private void Awake()
+    public Vector2Int StartPoint;
+    public Vector2Int FinishPoint;
+    
+
+    public void Init()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         wire = new NewWire(lineRenderer, transform.position);
@@ -75,34 +78,34 @@ public class Player : MonoBehaviour
             }
 
             int button_pressed = -1;
-            if(Input.GetButtonDown("P" + playerNumber + " A")) {
-                button_pressed = 0;
-                Debug.Log("P" + playerNumber + " A");
-            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-                button_pressed = 1;
-                Debug.Log("P" + playerNumber + " B");
-            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-                button_pressed = 2;
-                Debug.Log("P" + playerNumber + " X");
-            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-                button_pressed = 3;
-                Debug.Log("P" + playerNumber + " Y");
-            }
-            
-            //for keyboard test
-//            if(Input.GetKeyDown(KeyCode.A)) {
+//            if(Input.GetButtonDown("P" + playerNumber + " A")) {
 //                button_pressed = 0;
 //                Debug.Log("P" + playerNumber + " A");
-//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
 //                button_pressed = 1;
 //                Debug.Log("P" + playerNumber + " B");
-//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
 //                button_pressed = 2;
 //                Debug.Log("P" + playerNumber + " X");
-//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
 //                button_pressed = 3;
 //                Debug.Log("P" + playerNumber + " Y");
 //            }
+            
+            //for keyboard test
+            if(Input.GetKeyDown(KeyCode.A)) {
+                button_pressed = 0;
+                Debug.Log("P" + playerNumber + " A");
+            } else if(Input.GetKeyDown(KeyCode.B)) {
+                button_pressed = 1;
+                Debug.Log("P" + playerNumber + " B");
+            } else if(Input.GetKeyDown(KeyCode.X)) {
+                button_pressed = 2;
+                Debug.Log("P" + playerNumber + " X");
+            } else if(Input.GetKeyDown(KeyCode.Y)) {
+                button_pressed = 3;
+                Debug.Log("P" + playerNumber + " Y");
+            }
 
             if(button_pressed >= 0)
             {
@@ -141,7 +144,7 @@ public class Player : MonoBehaviour
     }
 
     private bool checkIfWin(Vector2Int currentPosition) {
-        if(currentPosition.x >= winDistance) {
+        if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
             foreach(Button button in buttons) {
                 button.gameObject.SetActive(false);
             }
@@ -157,6 +160,10 @@ public class Player : MonoBehaviour
     }
 
     private Vector2Int findMoveDirection(int correctInputs) {
+        
+        //for testing
+//        return Vector2Int.right;
+        
         Debug.Log("correct inputs: " + correctInputs);
         Vector2Int moveDirection = Vector2Int.zero;
         if(correctInputs == 3) {
@@ -169,12 +176,14 @@ public class Player : MonoBehaviour
             moveDirection = Vector2Int.left;
         }
 
-        bool adjustGridCoordinate = correctInputs == 2 || correctInputs == 1;
-        if(adjustGridCoordinate && currentPosition.y % 2 == 0) {
-            moveDirection = moveDirection + Vector2Int.left; 
-        }
+//        bool adjustGridCoordinate = correctInputs == 2 || correctInputs == 1;
+//        if(adjustGridCoordinate && currentPosition.y % 2 == 0) {
+//            moveDirection = moveDirection + Vector2Int.left; 
+//        }
         
         return moveDirection;
+        
+        
     }
 
     private void freezeOpponent()
@@ -202,14 +211,19 @@ public class Player : MonoBehaviour
             yield return waitForKeyPresses();
 
             Vector2Int moveDirection = findMoveDirection(correctInputs);
-            Vector2Int newPosition = currentPosition + moveDirection;
-            bool isBouncing = false;
-            newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
-            
-            currentPosition = newPosition;
-            Debug.Log("New pos: " + currentPosition);
 
-            checkPowerUp(currentPosition);
+            currentPosition += moveDirection;
+//            Vector2Int newPosition = currentPosition + moveDirection;
+//            
+//            bool isBouncing = false;
+//            newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
+//            
+//            currentPosition = newPosition;
+//            Debug.Log("New pos: " + currentPosition);
+//
+//            checkPowerUp(currentPosition);
+            
+            
             hasPlayerWon = checkIfWin(currentPosition);
 
 //            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
