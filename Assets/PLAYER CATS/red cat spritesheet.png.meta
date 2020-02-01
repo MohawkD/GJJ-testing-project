@@ -38,6 +38,42 @@ TextureImporter:
   - first:
       213: -2254842446365345263
     second: red cat spritesheet_11
+  - first:
+      213: 5672477347610608275
+    second: red cat spritesheet_0
+  - first:
+      213: -8204905111914942502
+    second: red cat spritesheet_1
+  - first:
+      213: 1061010677046718162
+    second: red cat spritesheet_2
+  - first:
+      213: -7344746283803858923
+    second: red cat spritesheet_3
+  - first:
+      213: 9216634784133591968
+    second: red cat spritesheet_4
+  - first:
+      213: -3533075589898752816
+    second: red cat spritesheet_5
+  - first:
+      213: 4949468326696140648
+    second: red cat spritesheet_6
+  - first:
+      213: 3308075508079664971
+    second: red cat spritesheet_7
+  - first:
+      213: 2947982651422198224
+    second: red cat spritesheet_8
+  - first:
+      213: 4353388597169696641
+    second: red cat spritesheet_9
+  - first:
+      213: 1377239879780656949
+    second: red cat spritesheet_10
+  - first:
+      213: -8737026995109039740
+    second: red cat spritesheet_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -127,8 +163,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dbb5f739954a1640800000000000000
-      internalID: 5051426456420596689
+      spriteID: 392c7c4f710b8be40800000000000000
+      internalID: 5672477347610608275
       vertices: []
       indices: 
       edges: []
@@ -146,10 +182,10 @@ TextureImporter:
       name: red cat spritesheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73fb987ec72975cd0800000000000000
-      internalID: -2569423997233414345
+      spriteID: adfe58ca542522e80800000000000000
+      internalID: -8204905111914942502
       vertices: []
       indices: 
       edges: []
@@ -167,10 +203,10 @@ TextureImporter:
       name: red cat spritesheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 256
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4cdd66f31b1e1880800000000000000
-      internalID: -8638437262697309108
+      spriteID: 2de244cd69779be00800000000000000
+      internalID: 1061010677046718162
       vertices: []
       indices: 
       edges: []
@@ -188,10 +224,10 @@ TextureImporter:
       name: red cat spritesheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 384
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc647db020073db30800000000000000
-      internalID: 4310912422414599885
+      spriteID: 51820844b28321a90800000000000000
+      internalID: -7344746283803858923
       vertices: []
       indices: 
       edges: []
@@ -209,10 +245,10 @@ TextureImporter:
       name: red cat spritesheet_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 512
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6855cdb22cbaa9250800000000000000
-      internalID: 5952258707971396998
+      spriteID: 0a3bacc118018ef70800000000000000
+      internalID: 9216634784133591968
       vertices: []
       indices: 
       edges: []
@@ -230,10 +266,10 @@ TextureImporter:
       name: red cat spritesheet_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 640
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6188516029207c0800000000000000
-      internalID: -4106559355379771722
+      spriteID: 0dc2b73587ef7fec0800000000000000
+      internalID: -3533075589898752816
       vertices: []
       indices: 
       edges: []
@@ -251,10 +287,10 @@ TextureImporter:
       name: red cat spritesheet_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 768
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea419c79674da32e0800000000000000
-      internalID: -2145168666670852946
+      spriteID: 86f35cf383b00b440800000000000000
+      internalID: 4949468326696140648
       vertices: []
       indices: 
       edges: []
@@ -272,10 +308,10 @@ TextureImporter:
       name: red cat spritesheet_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 896
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3a0260c8c78e1480800000000000000
-      internalID: -8926548115110884804
+      spriteID: b4f124dc525a8ed20800000000000000
+      internalID: 3308075508079664971
       vertices: []
       indices: 
       edges: []
@@ -293,10 +329,10 @@ TextureImporter:
       name: red cat spritesheet_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 1024
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,8 +340,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1993e748d61d65f0800000000000000
-      internalID: -761927643780900582
+      spriteID: 0d9c8063a9659e820800000000000000
+      internalID: 2947982651422198224
       vertices: []
       indices: 
       edges: []
@@ -314,10 +350,10 @@ TextureImporter:
       name: red cat spritesheet_9
       rect:
         serializedVersion: 2
-        x: 288
+        x: 1152
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cc6fb619ca2a25d0800000000000000
-      internalID: -3086607551450616638
+      spriteID: 18f29872dd75a6c30800000000000000
+      internalID: 4353388597169696641
       vertices: []
       indices: 
       edges: []
@@ -335,10 +371,10 @@ TextureImporter:
       name: red cat spritesheet_10
       rect:
         serializedVersion: 2
-        x: 320
+        x: 1280
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,8 +382,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f59a6ee31bb131540800000000000000
-      internalID: 4977352461252995423
+      spriteID: 537e3dcaf50fc1310800000000000000
+      internalID: 1377239879780656949
       vertices: []
       indices: 
       edges: []
@@ -356,10 +392,10 @@ TextureImporter:
       name: red cat spritesheet_11
       rect:
         serializedVersion: 2
-        x: 352
+        x: 1408
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,8 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11abbefddb035b0e0800000000000000
-      internalID: -2254842446365345263
+      spriteID: 481f68b1d38dfb680800000000000000
+      internalID: -8737026995109039740
       vertices: []
       indices: 
       edges: []

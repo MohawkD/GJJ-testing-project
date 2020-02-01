@@ -38,6 +38,42 @@ TextureImporter:
   - first:
       213: 6104708230053906231
     second: blue cat spritesheet_11
+  - first:
+      213: -7268656182533480501
+    second: blue cat spritesheet_0
+  - first:
+      213: 1668125209003399827
+    second: blue cat spritesheet_1
+  - first:
+      213: 2000648916097292384
+    second: blue cat spritesheet_2
+  - first:
+      213: 1917743241857785502
+    second: blue cat spritesheet_3
+  - first:
+      213: 5109373743375488863
+    second: blue cat spritesheet_4
+  - first:
+      213: 2099827787786156656
+    second: blue cat spritesheet_5
+  - first:
+      213: -740104968763489289
+    second: blue cat spritesheet_6
+  - first:
+      213: -7693850481267542304
+    second: blue cat spritesheet_7
+  - first:
+      213: 9128538176199170482
+    second: blue cat spritesheet_8
+  - first:
+      213: 612371526956068517
+    second: blue cat spritesheet_9
+  - first:
+      213: -5591530964094834829
+    second: blue cat spritesheet_10
+  - first:
+      213: 1918027976889724366
+    second: blue cat spritesheet_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -127,8 +163,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe231f1dc1b7f0c0800000000000000
-      internalID: -4541966204632092943
+      spriteID: bcf15a586bb802b90800000000000000
+      internalID: -7268656182533480501
       vertices: []
       indices: 
       edges: []
@@ -146,10 +182,10 @@ TextureImporter:
       name: blue cat spritesheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45ea0ba9c3d144bb0800000000000000
-      internalID: -4952801544070189484
+      spriteID: 39a958b1a0f562710800000000000000
+      internalID: 1668125209003399827
       vertices: []
       indices: 
       edges: []
@@ -167,10 +203,10 @@ TextureImporter:
       name: blue cat spritesheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 256
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a0f3018a35f3c440800000000000000
-      internalID: 4955073646659104937
+      spriteID: 068df3cd69bb3cb10800000000000000
+      internalID: 2000648916097292384
       vertices: []
       indices: 
       edges: []
@@ -188,10 +224,10 @@ TextureImporter:
       name: blue cat spritesheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 384
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d809e0b18fff6eeb0800000000000000
-      internalID: -4690780520788881267
+      spriteID: e9ed65d51513d9a10800000000000000
+      internalID: 1917743241857785502
       vertices: []
       indices: 
       edges: []
@@ -209,10 +245,10 @@ TextureImporter:
       name: blue cat spritesheet_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 512
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18c887162d54c0cc0800000000000000
-      internalID: -3743540420370985855
+      spriteID: f579a96595428e640800000000000000
+      internalID: 5109373743375488863
       vertices: []
       indices: 
       edges: []
@@ -230,10 +266,10 @@ TextureImporter:
       name: blue cat spritesheet_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 640
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1bbb864b435e0eb0800000000000000
-      internalID: -4751768974058079459
+      spriteID: 07afc746f36142d10800000000000000
+      internalID: 2099827787786156656
       vertices: []
       indices: 
       edges: []
@@ -251,10 +287,10 @@ TextureImporter:
       name: blue cat spritesheet_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 768
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85173afb38c0b11d0800000000000000
-      internalID: -3379093335416016552
+      spriteID: 7f3c950c37e9ab5f0800000000000000
+      internalID: -740104968763489289
       vertices: []
       indices: 
       edges: []
@@ -272,10 +308,10 @@ TextureImporter:
       name: blue cat spritesheet_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 896
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb24e89b5dd0df870800000000000000
-      internalID: 8718139665251451580
+      spriteID: 0e6741540c3f93590800000000000000
+      internalID: -7693850481267542304
       vertices: []
       indices: 
       edges: []
@@ -293,10 +329,10 @@ TextureImporter:
       name: blue cat spritesheet_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 1024
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,8 +340,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e50202953245ebd0800000000000000
-      internalID: -2601600411886287392
+      spriteID: 2b991fe2b151fae70800000000000000
+      internalID: 9128538176199170482
       vertices: []
       indices: 
       edges: []
@@ -314,10 +350,10 @@ TextureImporter:
       name: blue cat spritesheet_9
       rect:
         serializedVersion: 2
-        x: 288
+        x: 1152
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c17dfdab70aa78a0800000000000000
-      internalID: -6306551875118468665
+      spriteID: 5aea7c6c8a49f7800800000000000000
+      internalID: 612371526956068517
       vertices: []
       indices: 
       edges: []
@@ -335,10 +371,10 @@ TextureImporter:
       name: blue cat spritesheet_10
       rect:
         serializedVersion: 2
-        x: 320
+        x: 1280
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,8 +382,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ebca7f1e28dd8fd0800000000000000
-      internalID: -2337974938927182872
+      spriteID: 377a78e9634e662b0800000000000000
+      internalID: -5591530964094834829
       vertices: []
       indices: 
       edges: []
@@ -356,10 +392,10 @@ TextureImporter:
       name: blue cat spritesheet_11
       rect:
         serializedVersion: 2
-        x: 352
+        x: 1408
         y: 0
-        width: 32
-        height: 60
+        width: 128
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,8 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73744c58ac748b450800000000000000
-      internalID: 6104708230053906231
+      spriteID: ecde5c768443e9a10800000000000000
+      internalID: 1918027976889724366
       vertices: []
       indices: 
       edges: []
