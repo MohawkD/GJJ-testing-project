@@ -6,21 +6,41 @@ public class Player : MonoBehaviour
 {
     public int playerNumber = 1;
     public GameObject[] buttonImages;
+    private int[] requiredInputs = new int[3];
+    public Vector2Int currentPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        DisplayInputs();
+        Move();
     }
 
+    void Move()
+    {
+        int correctInputs = DisplayInputs();
+        if(correctInputs == 3) {
+            currentPosition = currentPosition + Vector2Int.right;
+        } else if(correctInputs == 2) {
+            currentPosition = currentPosition + Vector2Int.one;
+        } else if(correctInputs == 1) {
+            currentPosition = currentPosition + Vector2Int.up;
+        } else {
+            currentPosition = currentPosition + Vector2Int.left;
+        }
+        Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
+    }
 
     int DisplayInputs()
     {
+        
         for(int i = 0; i < 3; i++) {
-            int button_index = Random.Range(0, 3);
-            DisplayButton(i, i);
+            //int button_index = Random.Range(0, 3);
+            int button_index = i;
+            requiredInputs[i] = button_index;
+            DisplayButton(button_index, i);
         }
-        return(0);
+        int correctInputs = Random.Range(0, 3);
+        return(correctInputs);
     }
 
     void DisplayButton(int button_index, int position_index)
