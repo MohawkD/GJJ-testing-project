@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Show:
     DatabaseNames:
-    - 
     - Basic
     - Drop
     - Fade
@@ -23,9 +22,9 @@ MonoBehaviour:
     - Rotate
     - Scale
     - Slide
+    - Uncategorized
     DatabaseType: 1
     Databases:
-    - {fileID: 11400000, guid: 3d060a96ed7d71c459c4a284443ded47, type: 2}
     - {fileID: 11400000, guid: 8c6ef36a151e4be46b9976a8293cc70b, type: 2}
     - {fileID: 11400000, guid: b1959cc9692cfba478c5b24eb593a168, type: 2}
     - {fileID: 11400000, guid: 09c98895f36ad234fb31b37056deac15, type: 2}
@@ -34,6 +33,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 94c9be9c0ca4fdc48a38595e65d4dd58, type: 2}
     - {fileID: 11400000, guid: 67698ae6846c9a54c8bb8e788285a30a, type: 2}
     - {fileID: 11400000, guid: 449a437e97970c345afaf9d335af35d4, type: 2}
+    - {fileID: 11400000, guid: 3d060a96ed7d71c459c4a284443ded47, type: 2}
   Hide:
     DatabaseNames:
     - Basic

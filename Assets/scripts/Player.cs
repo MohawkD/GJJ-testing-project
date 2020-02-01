@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int playerNumber = 1;
-    public Sprite[] buttonImages;
+    public GameObject[] buttonPositions;
     // Start is called before the first frame update
     void Start()
     {
