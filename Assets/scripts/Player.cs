@@ -53,29 +53,30 @@ public class Player : MonoBehaviour
 
     private IEnumerator Move()
     {
-        DisplayInputs();
+        while(true) {
+            DisplayInputs();
 
-        yield return waitForKeyPresses();
+            yield return waitForKeyPresses();
 
-        int correctInputs = 0;
-        for(int i = 0; i < 3; i++) {
-            if(givenInputs[i] == requiredInputs[i]) {
-                correctInputs++;
+            int correctInputs = 0;
+            for(int i = 0; i < 3; i++) {
+                if(givenInputs[i] == requiredInputs[i]) {
+                    correctInputs++;
+                }
             }
+            
+            if(correctInputs == 3) {
+                currentPosition = currentPosition + Vector2Int.right;
+            } else if(correctInputs == 2) {
+                currentPosition = currentPosition + Vector2Int.one;
+            } else if(correctInputs == 1) {
+                currentPosition = currentPosition + Vector2Int.up;
+            } else {
+                currentPosition = currentPosition + Vector2Int.left;
+            }
+            Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
+            yield return new WaitForSeconds(1);
         }
-        //int correctInputs = Random.Range(0, 3);
-
-        if(correctInputs == 3) {
-            currentPosition = currentPosition + Vector2Int.right;
-        } else if(correctInputs == 2) {
-            currentPosition = currentPosition + Vector2Int.one;
-        } else if(correctInputs == 1) {
-            currentPosition = currentPosition + Vector2Int.up;
-        } else {
-            currentPosition = currentPosition + Vector2Int.left;
-        }
-        Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
-        yield return null;
     }
 
     private void DisplayInputs()
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour
     private void DisplayButton(int button_index, int position_index)
     {
         buttonImages[button_index].SetActive(true);
-        buttonImages[button_index].transform.position = new Vector3(buttonImages[button_index].transform.position.x + (20 * position_index), buttonImages[button_index].transform.position.y, buttonImages[button_index].transform.position.z);
+        buttonImages[button_index].transform.localPosition = new Vector3(20 * position_index, 0, 0);
     
     }
 
