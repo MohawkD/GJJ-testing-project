@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     public int playerNumber = 1;
     public Button[] buttons;
     public Sprite[] buttonImages;
+    public Sprite[] wrongButtonImages;
+    public Sprite[] rightButtonImages;
+
     public int bounceAmount = 2;
     public int bounceBorder = 5;
     public int winDistance = 10;
@@ -91,10 +94,10 @@ public class Player : MonoBehaviour
             {
                 if(button_pressed == requiredInputs[registeredPresses]) {
                     correctInputs++;
-                    //do image thing
+                    buttons[registeredPresses].GetComponent<Image>().sprite = rightButtonImages[requiredInputs[registeredPresses]];
+                } else {
+                    buttons[registeredPresses].GetComponent<Image>().sprite = wrongButtonImages[requiredInputs[registeredPresses]];
                 }
-                //givenInputs[registeredPresses] = button_pressed;
-                buttons[registeredPresses].GetComponent<Image>().color = new Color32(200,200,200,255);
                 registeredPresses++;
             }
 
