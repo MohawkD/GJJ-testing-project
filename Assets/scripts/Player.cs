@@ -32,19 +32,21 @@ public class Player : MonoBehaviour
     private bool isSpedUp = false;
     private bool isFrozen = false;
     private int correctInputs = 0;
+    
     private Animator animator;
-
     private NewWire wire;
+    
+    private void Awake()
+    {
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        wire = new NewWire(lineRenderer, transform.position);
+        animator = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        
         Invoke("startGame", 2.0f);
-
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
-        wire = new NewWire(lineRenderer, transform.position);
     }
 
 
