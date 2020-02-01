@@ -13,17 +13,20 @@ public class Player : MonoBehaviour
     public int bounceAmount = 2;
     public int bounceBorder = 5;
     public int winDistance = 10;
-    private int[] requiredInputs = new int[3];
-    private int[] givenInputs = new int[3];
+
     public Vector2Int currentPosition;
     public Player otherPlayer;
     public GameObject wirePrefab;
     public float freezeTime = 5.0f;
     public int speedUpBoost = 3;
     public float Speed;
+
     private Wire currentWire = null;
+    private int[] requiredInputs = new int[3];
+    private int[] givenInputs = new int[3];
     private int easyInputsDone = 0;
     private bool spedUp = false;
+    private int correctInputs = 0;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -44,9 +47,9 @@ public class Player : MonoBehaviour
 
     private IEnumerator waitForKeyPresses()
     {
-        bool done = false;
-        int index = 0;
         int registeredPresses = 0;
+        correctInputs = 0;
+
         while(registeredPresses < 3)
         {
             int button_pressed = -1;
@@ -81,10 +84,15 @@ public class Player : MonoBehaviour
 
             if(button_pressed >= 0)
             {
-                givenInputs[registeredPresses] = button_pressed;
+                if(button_pressed == requiredInputs[registeredPresses]) {
+                    correctInputs++;
+                    //do image thing
+                }
+                //givenInputs[registeredPresses] = button_pressed;
                 buttons[registeredPresses].GetComponent<Image>().color = new Color32(200,200,200,255);
                 registeredPresses++;
             }
+
             yield return null;
         }
         Debug.Log("P" + playerNumber + " player input received");
@@ -126,13 +134,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    private Vector2Int findMoveDirection() {
-        int correctInputs = 0;
-        for(int i = 0; i < 3; i++) {
-            if(givenInputs[i] == requiredInputs[i]) {
-                correctInputs++;
-            }
-        }
+    private Vector2Int findMoveDirection(int correctInputs) {
         Debug.Log("correct inputs: " + correctInputs);
         Vector2Int moveDirection = Vector2Int.zero;
         if(correctInputs == 3) {
@@ -182,7 +184,7 @@ public class Player : MonoBehaviour
             DisplayInputs();
             yield return waitForKeyPresses();
 
-            Vector2Int moveDirection = findMoveDirection();
+            Vector2Int moveDirection = findMoveDirection(correctInputs);
             Vector2Int newPosition = currentPosition + moveDirection;
             bool isBouncing = false;
             newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
