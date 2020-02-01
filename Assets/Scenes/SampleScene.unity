@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1127937787}
   m_player: {fileID: 2024513605}
+  m_player_2: {fileID: 1853915864}
 --- !u!1 &1127937784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4633,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2d9248f1642ec974fbea6bf4eeab1e63, type: 3}
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
   currentPosition: {x: 0, y: 0}
+  wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
+    type: 3}
 --- !u!212 &1853915865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5192,3 +5195,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2d9248f1642ec974fbea6bf4eeab1e63, type: 3}
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
   currentPosition: {x: 0, y: 0}
+  wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
+    type: 3}

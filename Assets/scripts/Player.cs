@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
 
+    public GameObject wirePrefab;
+
+    private Wire currentWire = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,21 @@ public class Player : MonoBehaviour
                 button_pressed = 3;
                 Debug.Log("P" + playerNumber + " Y");
             }
+            
+            //for keyboard test
+//            if(Input.GetKeyDown(KeyCode.A)) {
+//                button_pressed = 0;
+//                Debug.Log("P" + playerNumber + " A");
+//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//                button_pressed = 1;
+//                Debug.Log("P" + playerNumber + " B");
+//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//                button_pressed = 2;
+//                Debug.Log("P" + playerNumber + " X");
+//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//                button_pressed = 3;
+//                Debug.Log("P" + playerNumber + " Y");
+//            }
 
             if(button_pressed >= 0)
             {
@@ -49,6 +67,7 @@ public class Player : MonoBehaviour
                     Debug.Log("P" + playerNumber + " player input received");
                 }
             }
+            
             yield return null;
         }
     }
@@ -77,6 +96,10 @@ public class Player : MonoBehaviour
                 currentPosition = currentPosition + Vector2Int.left;
             }
             Debug.Log("correct inputs: " + correctInputs + ". New pos: " + currentPosition);
+            
+            GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
+            currentWire = go.GetComponent<Wire>();
+            
             yield return new WaitForSeconds(1);
         }
     }
@@ -87,6 +110,16 @@ public class Player : MonoBehaviour
             int button_index = Random.Range(0, 3);
             requiredInputs[i] = button_index;
             buttons[i].GetComponent<Image>().sprite = buttonImages[button_index];
+        }
+    }
+
+    public void UpdatePosition(Vector3 pos)
+    {
+        this.transform.position = pos;
+        
+        if (currentWire != null) 
+        {
+            currentWire.IncreaseTo(pos);
         }
     }
 
