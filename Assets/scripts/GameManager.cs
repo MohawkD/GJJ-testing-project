@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public Vector3 getPosition(Vector2Int gridCoordinate)
+    {
+        return m_hexGridMap.GetGridPosition(gridCoordinate);
+    }
     // Update is called once per frame
     void Update()
     {

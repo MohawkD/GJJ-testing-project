@@ -11,15 +11,19 @@ public class Player : MonoBehaviour
     public Sprite[] buttonImages;
     public int bounceAmount = 2;
     public int bounceBorder = 5;
-    public int winDistance = 3;
+    public int winDistance = 10;
     private int[] requiredInputs = new int[3];
     private int[] givenInputs = new int[3];
     public Vector2Int currentPosition;
     public Player otherPlayer;
     public GameObject wirePrefab;
-
+    public float freezeTime = 5.0f;
+    public int speedUpBoost = 3;
     public float Speed;
     private Wire currentWire = null;
+    private int easyInputsDone = 0;
+    private bool spedUp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,8 +140,27 @@ public class Player : MonoBehaviour
         if(adjustGridCoordinate && currentPosition.y % 2 == 0) {
             moveDirection = moveDirection + Vector2Int.left; 
         }
-
+        
         return moveDirection;
+    }
+
+    public IEnumerator freezePlayer() {
+        yield return new WaitForSeconds(freezeTime);
+    }
+
+    private void freezeOpponent()
+    {
+        otherPlayer.freezePlayer();
+    }
+
+    private void checkPowerUp(Vector2Int currentPosition) {
+        string content = powerUpSpawner.instance.getCoordinateContent(currentPosition);
+        if(content == "freeze") {
+            Debug.Log("Pickup freeze");
+            freezeOpponent();
+        } else if(content == "speed") {
+            spedUp = true;
+        }
     }
 
     private IEnumerator Move()
@@ -152,7 +175,8 @@ public class Player : MonoBehaviour
             newPosition = checkIfBounce(newPosition, moveDirection);
             currentPosition = newPosition;
             Debug.Log("New pos: " + currentPosition);
-            
+
+            checkPowerUp(currentPosition);
             hasPlayerWon = checkIfWin(currentPosition);
 
             GameObject go = Instantiate(wirePrefab, this.transform.position, Quaternion.identity);
@@ -164,10 +188,22 @@ public class Player : MonoBehaviour
 
     private void DisplayInputs()
     {
+        int[, ] easyButtonIndices = new int[2, 3] {{0, 0, 0}, {3, 0, 3}};
+        int easy_index = Random.Range(0, easyButtonIndices.GetLength(0));
+
         for(int i = 0; i < 3; i++) {
-            int button_index = Random.Range(0, 4);
+            int button_index = 0;
+            if(!spedUp) {
+                button_index = Random.Range(0, 4);
+            } else {
+                button_index = easyButtonIndices[easy_index, i];
+            }
             requiredInputs[i] = button_index;
             buttons[i].GetComponent<Image>().sprite = buttonImages[button_index];
+        }
+
+        if(spedUp) {
+            easyInputsDone++;
         }
     }
 
@@ -186,6 +222,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(spedUp && easyInputsDone > speedUpBoost) {
+            Debug.Log("speed up over");
+            easyInputsDone = 0;
+            spedUp = false;
+        }
     }
 }

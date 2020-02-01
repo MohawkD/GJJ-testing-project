@@ -305,6 +305,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &140220513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 140220515}
+  - component: {fileID: 140220514}
+  m_Layer: 0
+  m_Name: powerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &140220514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140220513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ade9ed8998c3441aff19a721d747b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpImages:
+  - {fileID: 325121997540415702, guid: 6d4a894ddc7042747900d9f54d38425a, type: 3}
+  powerUpSpawnTime: 10
+--- !u!4 &140220515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140220513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2847566, y: 3.761019, z: -0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201492406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,6 +5374,8 @@ MonoBehaviour:
   otherPlayer: {fileID: 2024513605}
   wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
     type: 3}
+  freezeTime: 5
+  speedUpBoost: 3
   Speed: 5
 --- !u!212 &1853915865
 SpriteRenderer:
@@ -5890,9 +5938,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
   bounceAmount: 2
   bounceBorder: 5
-  winDistance: 3
+  winDistance: 10
   currentPosition: {x: 0, y: 0}
   otherPlayer: {fileID: 1853915864}
   wirePrefab: {fileID: 9030689342547536879, guid: 9858f631b8483e84ebc46ea384fd531f,
     type: 3}
+  freezeTime: 5
+  speedUpBoost: 3
   Speed: 5
