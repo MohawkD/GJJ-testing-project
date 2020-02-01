@@ -32,10 +32,11 @@ public class Player : MonoBehaviour
 //    private Wire currentWire = null;
     private int easyInputsDone = 0;
     private bool isSpedUp = false;
-    private bool isFrozen = false;
+    public bool isFrozen = false;
     private int correctInputs = 0;
     
     private Animator animator;
+    private float time = 0.0f;
     private NewWire wire;
     
     [HideInInspector]
@@ -69,20 +70,24 @@ public class Player : MonoBehaviour
 
         while(registeredPresses < 3)
         {
+            if(isFrozen) {
+                yield return new WaitForSeconds(timeFrozen);
+            }
+
             int button_pressed = -1;
-           if(Input.GetButtonDown("P" + playerNumber + " A")) {
-               button_pressed = 0;
-               Debug.Log("P" + playerNumber + " A");
-           } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-               button_pressed = 1;
-               Debug.Log("P" + playerNumber + " B");
-           } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-               button_pressed = 2;
-               Debug.Log("P" + playerNumber + " X");
-           } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-               button_pressed = 3;
-               Debug.Log("P" + playerNumber + " Y");
-           }
+            if(Input.GetButtonDown("P" + playerNumber + " A")) {
+                button_pressed = 0;
+                Debug.Log("P" + playerNumber + " A");
+            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
+                button_pressed = 1;
+                Debug.Log("P" + playerNumber + " B");
+            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
+                button_pressed = 2;
+                Debug.Log("P" + playerNumber + " X");
+            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
+                button_pressed = 3;
+                Debug.Log("P" + playerNumber + " Y");
+            }
             
             //for keyboard test
 //            if(Input.GetKeyDown(KeyCode.A)) {
@@ -284,13 +289,25 @@ public class Player : MonoBehaviour
             easyInputsDone = 0;
             isSpedUp = false;
         }
-        if(isFrozen) {
+
+        if(isFrozen && time == 0) {
             foreach(Button button in buttons) {
-                button.gameObject.SetActive(false);
+                button.GetComponent<Image>().color = new Color32(200,200,200,255);
             }
-            //foreach(Button button in buttons) {
-                //button.gameObject.SetActive(true);
-            //}
+        }
+
+        if(!isFrozen && time > 0) {
+            foreach(Button button in buttons) {
+                button.GetComponent<Image>().color = new Color32(255,255,255,255);
+            }
+            time = 0.0f;
+        }
+
+        if(isFrozen){
+            time += Time.deltaTime;
+            if(time >= timeFrozen) {
+                isFrozen = false;
+            }
         }
     }
 }
