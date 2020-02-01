@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1127937787}
   m_player: {fileID: 2024513605}
+  m_player_2: {fileID: 1853915864}
 --- !u!1 &1127937784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4631,6 +4632,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: afb658406aa1ed546b4e2b1eb3b055db, type: 3}
   - {fileID: 21300000, guid: 2d9248f1642ec974fbea6bf4eeab1e63, type: 3}
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
+  bounce_amount: 2
   currentPosition: {x: 0, y: 0}
 --- !u!212 &1853915865
 SpriteRenderer:
@@ -4671,7 +4673,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 15dd4feeef2a2044fa81f5aead5c5355, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c4bc5a8c2c387b44ab8139398fb3494, type: 3}
   m_Color: {r: 0.9433962, g: 0.28924885, b: 0.28924885, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4691,7 +4693,7 @@ Transform:
   m_GameObject: {fileID: 1853915863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -5191,4 +5193,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: afb658406aa1ed546b4e2b1eb3b055db, type: 3}
   - {fileID: 21300000, guid: 2d9248f1642ec974fbea6bf4eeab1e63, type: 3}
   - {fileID: 21300000, guid: 8b96497a22446bd42ab6ff3e43e3b6f8, type: 3}
+  bounce_amount: 2
   currentPosition: {x: 0, y: 0}

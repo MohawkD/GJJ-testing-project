@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         m_player.currentPosition = Vector2Int.zero;
-        
+        m_player_2.currentPosition = Vector2Int.zero;
     }
 
     // Start is called before the first frame update
