@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     public Player otherPlayer;
     public GameObject wirePrefab;
 
+    public float Speed;
     private Wire currentWire = null;
     // Start is called before the first frame update
     void Start()
@@ -39,34 +41,34 @@ public class Player : MonoBehaviour
         while(!done) // essentially a "while true", but with a bool to break out naturally
         {
             int button_pressed = -1;
-            if(Input.GetButtonDown("P" + playerNumber + " A")) {
-                button_pressed = 0;
-                Debug.Log("P" + playerNumber + " A");
-            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-                button_pressed = 1;
-                Debug.Log("P" + playerNumber + " B");
-            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-                button_pressed = 2;
-                Debug.Log("P" + playerNumber + " X");
-            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-                button_pressed = 3;
-                Debug.Log("P" + playerNumber + " Y");
-            }
-            
-            //for keyboard test
-//            if(Input.GetKeyDown(KeyCode.A)) {
+//            if(Input.GetButtonDown("P" + playerNumber + " A")) {
 //                button_pressed = 0;
 //                Debug.Log("P" + playerNumber + " A");
-//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
 //                button_pressed = 1;
 //                Debug.Log("P" + playerNumber + " B");
-//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
 //                button_pressed = 2;
 //                Debug.Log("P" + playerNumber + " X");
-//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
 //                button_pressed = 3;
 //                Debug.Log("P" + playerNumber + " Y");
 //            }
+            
+            //for keyboard test
+            if(Input.GetKeyDown(KeyCode.A)) {
+                button_pressed = 0;
+                Debug.Log("P" + playerNumber + " A");
+            } else if(Input.GetKeyDown(KeyCode.B)) {
+                button_pressed = 1;
+                Debug.Log("P" + playerNumber + " B");
+            } else if(Input.GetKeyDown(KeyCode.X)) {
+                button_pressed = 2;
+                Debug.Log("P" + playerNumber + " X");
+            } else if(Input.GetKeyDown(KeyCode.Y)) {
+                button_pressed = 3;
+                Debug.Log("P" + playerNumber + " Y");
+            }
 
             if(button_pressed >= 0)
             {
@@ -173,11 +175,13 @@ public class Player : MonoBehaviour
 
     public void UpdatePosition(Vector3 pos)
     {
-        this.transform.position = pos;
+        float step = Speed * Time.deltaTime;
+
+        transform.position = Vector3.Lerp(transform.position, pos, step);
         
         if (currentWire != null) 
         {
-            currentWire.IncreaseTo(pos);
+            currentWire.IncreaseTo(transform.position);
         }
     }
 
