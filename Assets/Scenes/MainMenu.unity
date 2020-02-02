@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 142421263}
   - component: {fileID: 142421268}
   m_Layer: 0
-  m_Name: MasterCanvas
+  m_Name: MasterCanvasMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,9 +159,9 @@ MonoBehaviour:
   StartRotation: {x: 0, y: 0, z: 0}
   StartScale: {x: 1, y: 1, z: 1}
   StartAlpha: 1
-  CanvasName: MasterCanvas
+  CanvasName: MainMenu
   CustomCanvasName: 0
-  DontDestroyCanvasOnLoad: 1
+  DontDestroyCanvasOnLoad: 0
 --- !u!114 &142421264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +252,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b6dc3a6a63dac345ac7d9da2cd1d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  View: {fileID: 375360453}
+--- !u!114 &375360453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8007134274246955240, guid: 130b7ef72f220df42bdeb8e11097ba10,
+    type: 3}
+  m_PrefabInstance: {fileID: 8007134272738381900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314affd16bceddb4c99fbaa07de901d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519709044
@@ -3062,6 +3075,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 142421267}
     m_Modifications:
+    - target: {fileID: 519709045, guid: 130b7ef72f220df42bdeb8e11097ba10, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8007134272711488054, guid: 130b7ef72f220df42bdeb8e11097ba10,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3091,6 +3108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007134274246955240, guid: 130b7ef72f220df42bdeb8e11097ba10,
+        type: 3}
+      propertyPath: BehaviorAtStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007134274246955240, guid: 130b7ef72f220df42bdeb8e11097ba10,
+        type: 3}
+      propertyPath: ShowBehavior.Animation.Move.Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8007134274246955244, guid: 130b7ef72f220df42bdeb8e11097ba10,
         type: 3}

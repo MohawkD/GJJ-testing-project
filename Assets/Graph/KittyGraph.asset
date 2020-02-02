@@ -574,7 +574,7 @@ MonoBehaviour:
   AllowSceneActivation: 1
   SceneActivationDelay: 0.2
   SceneBuildIndex: 0
-  SceneName: Game
+  SceneName: Game1
 --- !u!114 &8083831134059079007
 MonoBehaviour:
   m_ObjectHideFlags: 1

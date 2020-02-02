@@ -9,6 +9,7 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
+    public bool hackWin = false;
     public int playerNumber = 1;
     public Button[] buttons;
     public Sprite[] buttonImages;
@@ -158,7 +159,7 @@ public class Player : MonoBehaviour
 
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
-        if(currentPosition.x >= winDistance  && hasBattery) {
+        if((currentPosition.x >= winDistance  && hasBattery) || hackWin) {
             lampon.SetActive(true);
             lampoff.SetActive(false);
 

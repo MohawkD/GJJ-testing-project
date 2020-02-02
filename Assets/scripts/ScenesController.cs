@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Doozy.Engine.UI;
 
 public class ScenesController : MonoBehaviour
 {
-    
+    public UIView View;
+
     public void StartNewGame()
     {
         SceneManager.LoadScene("Game 1");
         
-        Destroy(this.gameObject);
+        View.Hide();
+        //Destroy(this.gameObject);
 //        Application.Quit();
     }
 
@@ -22,6 +25,6 @@ public class ScenesController : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Finish");
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }
