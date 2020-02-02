@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     public int speedUpBoost = 3;
     public bool hasBattery = false;
     public Vector2Int currentPosition;
+    public GameObject lampon;
+    public GameObject lampoff;
+
 
 //    public GameObject wirePrefab;
 
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour
     public bool inputIsStatic = true;
     private int[] staticInputs = new int[3];
     public GameObject winCondition;
+    public GameObject startCondition;
 
     private int preMoveDirectionIndex = 0;
 
@@ -77,11 +81,13 @@ public class Player : MonoBehaviour
                 
             }
         }
+        startCondition.SetActive(true);
         Invoke("startGame", 2.0f);
     }
 
 
     private void startGame() {
+        startCondition.SetActive(false);
         foreach(Button button in buttons) {
             button.gameObject.SetActive(true);
         }
@@ -153,6 +159,9 @@ public class Player : MonoBehaviour
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
         if(currentPosition.x >= winDistance  && hasBattery) {
+            lampon.SetActive(true);
+            lampoff.SetActive(false);
+
             winCondition.SetActive(true);
 
             foreach(Button button in buttons) {
