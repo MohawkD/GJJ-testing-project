@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public Vector2Int FinishPoint;
     public bool inputIsStatic = true;
     private int[] staticInputs = new int[3];
-
+    public GameObject winCondition;
 
     private int preMoveDirectionIndex;
     public void Init()
@@ -151,6 +151,8 @@ public class Player : MonoBehaviour
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
         if(currentPosition.x > winDistance) {
+            winCondition.SetActive(true);
+
             foreach(Button button in buttons) {
                 button.gameObject.SetActive(false);
             }
