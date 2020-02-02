@@ -78,34 +78,34 @@ public class Player : MonoBehaviour
             }
 
             int button_pressed = -1;
-//            if(Input.GetButtonDown("P" + playerNumber + " A")) {
-//                button_pressed = 0;
-//                Debug.Log("P" + playerNumber + " A");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
-//                button_pressed = 1;
-//                Debug.Log("P" + playerNumber + " B");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
-//                button_pressed = 2;
-//                Debug.Log("P" + playerNumber + " X");
-//            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
-//                button_pressed = 3;
-//                Debug.Log("P" + playerNumber + " Y");
-//            }
-            
-            //for keyboard test
-            if(Input.GetKeyDown(KeyCode.A)) {
+            if(Input.GetButtonDown("P" + playerNumber + " A")) {
                 button_pressed = 0;
                 Debug.Log("P" + playerNumber + " A");
-            } else if(Input.GetKeyDown(KeyCode.B)) {
+            } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
                 button_pressed = 1;
                 Debug.Log("P" + playerNumber + " B");
-            } else if(Input.GetKeyDown(KeyCode.X)) {
+            } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
                 button_pressed = 2;
                 Debug.Log("P" + playerNumber + " X");
-            } else if(Input.GetKeyDown(KeyCode.Y)) {
+            } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
                 button_pressed = 3;
                 Debug.Log("P" + playerNumber + " Y");
             }
+            
+            //for keyboard test
+//            if(Input.GetKeyDown(KeyCode.A)) {
+//                button_pressed = 0;
+//                Debug.Log("P" + playerNumber + " A");
+//            } else if(Input.GetKeyDown(KeyCode.B)) {
+//                button_pressed = 1;
+//                Debug.Log("P" + playerNumber + " B");
+//            } else if(Input.GetKeyDown(KeyCode.X)) {
+//                button_pressed = 2;
+//                Debug.Log("P" + playerNumber + " X");
+//            } else if(Input.GetKeyDown(KeyCode.Y)) {
+//                button_pressed = 3;
+//                Debug.Log("P" + playerNumber + " Y");
+//            }
 
             if(button_pressed >= 0)
             {
@@ -169,9 +169,9 @@ public class Player : MonoBehaviour
         if(correctInputs == 3) {
             moveDirection = Vector2Int.right;
         } else if(correctInputs == 2) {
-            moveDirection = Vector2Int.one;
+            moveDirection = playerNumber == 1 ? Vector2Int.one : Vector2Int.down;
         } else if(correctInputs == 1) {
-            moveDirection = Vector2Int.up;
+            moveDirection = playerNumber == 1 ? Vector2Int.up : -Vector2Int.one;
         } else {
             moveDirection = Vector2Int.left;
         }
