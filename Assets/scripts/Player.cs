@@ -169,6 +169,9 @@ public class Player : MonoBehaviour
             StopCoroutine(Move());
             //TODO: winning animation
             Debug.Log("Player " + playerNumber + " wins!");
+            
+            GameManager.instance.GameFinish();
+            
             return true;
         }
         return false;
