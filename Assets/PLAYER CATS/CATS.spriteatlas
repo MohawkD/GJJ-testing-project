@@ -31,36 +31,10 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 8307bde6e5fadb04ea98572e8f6b4a40, type: 3}
-    totalSpriteSurfaceArea: 635964
+    totalSpriteSurfaceArea: 0
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites:
-  - {fileID: 21300000, guid: a059b4113740d1f44b872b3ecfdf016a, type: 3}
-  - {fileID: 21300000, guid: fefe0491bab52bd48bd89d0d77697a6e, type: 3}
-  - {fileID: 21300000, guid: 7003a753eec4a1447b0aa4348e8e76ce, type: 3}
-  - {fileID: 21300000, guid: c9736193f42211c40ae321fc53e3cd17, type: 3}
-  - {fileID: 21300000, guid: 96ad7e17a90db1a4fa387c1d88c0958e, type: 3}
-  - {fileID: 21300000, guid: d6653b68a9128cb41af03f1a4beecb0e, type: 3}
-  - {fileID: 21300000, guid: 52ebaef842c23cb4c944a91a0d8c817e, type: 3}
-  - {fileID: 21300000, guid: 31f22e2a98d89ea40865db97d19760f4, type: 3}
-  - {fileID: 21300000, guid: 407c702c02675af47948d3709328013e, type: 3}
-  - {fileID: 21300000, guid: b3c8ed3c77c3b0f42bb9fbff66710bb8, type: 3}
-  - {fileID: 21300000, guid: 2c455f2d0dee57345b8a179afb7a71ef, type: 3}
-  - {fileID: 21300000, guid: ea57609de89037c409523ef9be3d339f, type: 3}
-  - {fileID: 21300000, guid: 9fde932f1cd8b3643a43e44e8e45a970, type: 3}
-  m_PackedSpriteNamesToIndex:
-  - blue body LOS
-  - red body
-  - red head
-  - blue head WIN
-  - red tail
-  - blue body WIN
-  - blue tail
-  - blue head
-  - red head LOS
-  - blue body
-  - red head WIN
-  - red body WIN
-  - blue head LOS
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
   m_Tag: CATS
   m_IsVariant: 0

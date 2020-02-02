@@ -44,15 +44,17 @@ public class Player : MonoBehaviour
 
     public Vector2Int StartPoint;
     public Vector2Int FinishPoint;
-    
     public bool inputIsStatic = true;
     private int[] staticInputs = new int[3];
 
+
+    private int preMoveDirectionIndex;
     public void Init()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         wire = new NewWire(lineRenderer, transform.position);
         animator = GetComponent<Animator>();
+        preMoveDirectionIndex = 0;
     }
 
     // Start is called before the first frame update
@@ -168,6 +170,11 @@ public class Player : MonoBehaviour
 //        return Vector2Int.right;
         
         Debug.Log("correct inputs: " + correctInputs);
+
+        int incorrectInputs = 3 - correctInputs;
+        preMoveDirectionIndex = GlobalVar.GetNextMoveDirectionIndex(preMoveDirectionIndex, incorrectInputs);
+        return GlobalVar.GetMoveDirection(preMoveDirectionIndex, currentPosition);
+        
         Vector2Int moveDirection = Vector2Int.zero;
         if(correctInputs == 3) {
             moveDirection = Vector2Int.right;

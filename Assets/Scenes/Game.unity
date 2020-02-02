@@ -121,6 +121,119 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &78440404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 183362, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_Name
+      value: BasicZoneYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 268
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.10512729
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.10512729
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6992484
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6992484
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 162.56456
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 75.17437
+      objectReference: {fileID: 0}
+    - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 75.17437
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.octaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.remapEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.frequency
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: NoiseModule.damping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889570, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
 --- !u!1 &193445815
 GameObject:
   m_ObjectHideFlags: 0
