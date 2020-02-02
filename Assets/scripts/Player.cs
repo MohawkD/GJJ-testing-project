@@ -180,6 +180,16 @@ public class Player : MonoBehaviour
         Debug.Log("correct inputs: " + correctInputs);
 
         int incorrectInputs = 3 - correctInputs;
+        if (incorrectInputs < 0)
+        {
+            incorrectInputs = 0;
+        }
+
+        if (incorrectInputs > 3)
+        {
+            incorrectInputs = 3;
+        }
+        
         preMoveDirectionIndex = GlobalVar.GetNextMoveDirectionIndex(preMoveDirectionIndex, incorrectInputs);
         return GlobalVar.GetMoveDirection(preMoveDirectionIndex, currentPosition);
         
