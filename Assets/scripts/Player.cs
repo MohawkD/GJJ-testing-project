@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public int bounceAmount = 2;
     public int bounceBorder = 20;
-//    public int winDistance = 10;
+    public int winDistance = 10;
     public float timeFrozen = 5.0f;
     public int speedUpBoost = 3;
     
@@ -149,7 +149,8 @@ public class Player : MonoBehaviour
     }
 
     private bool checkIfWin(Vector2Int currentPosition) {
-        if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
+        //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
+        if(currentPosition.x > winDistance) {
             foreach(Button button in buttons) {
                 button.gameObject.SetActive(false);
             }
