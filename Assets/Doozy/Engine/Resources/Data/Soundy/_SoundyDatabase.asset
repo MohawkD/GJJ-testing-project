@@ -18,9 +18,11 @@ MonoBehaviour:
   - Example Music
   - Example Slides
   - General
+  - music
   SoundDatabases:
   - {fileID: 11400000, guid: 8eba2c230cbe4f84e8ba00ed7ba55028, type: 2}
   - {fileID: 11400000, guid: 6752d2ca1725cf840b858b622a96bb77, type: 2}
   - {fileID: 11400000, guid: d6efd9700ef4c504f997ee462880e61e, type: 2}
   - {fileID: 11400000, guid: f357811014801dc489af9b0c14c815e3, type: 2}
   - {fileID: 11400000, guid: 3add35997904fb84691b57243cd26ef9, type: 2}
+  - {fileID: 11400000, guid: 311b0aadb68761d45b2b4428d36c00b6, type: 2}
