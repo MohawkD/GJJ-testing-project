@@ -1861,9 +1861,8 @@ MonoBehaviour:
   speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
   Speed: 5
-  isFrozen: 0
   otherPlayer: {fileID: 1855281096}
-  StartPoint: {x: 0, y: 0}
+  StartPoint: {x: -1, y: 0}
   FinishPoint: {x: 3, y: 8}
   inputIsStatic: 1
 --- !u!95 &1526318008
@@ -2104,9 +2103,8 @@ MonoBehaviour:
   speedUpBoost: 3
   currentPosition: {x: 0, y: 0}
   Speed: 2
-  isFrozen: 0
   otherPlayer: {fileID: 1526318007}
-  StartPoint: {x: -10, y: 0}
+  StartPoint: {x: 0, y: 0}
   FinishPoint: {x: 16, y: 0}
   inputIsStatic: 1
 --- !u!212 &1855281097
