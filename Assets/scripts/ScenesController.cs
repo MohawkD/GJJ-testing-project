@@ -14,6 +14,11 @@ public class ScenesController : MonoBehaviour
 //        Application.Quit();
     }
 
+    public void RestartGame()
+    {
+        Application.Quit();
+    }
+
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Finish");

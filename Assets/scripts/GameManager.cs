@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private bool isGameRunning = false;
 
-    public GameObject child;
+    public GameObject childGO;
 
     private void Awake()
     {
@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
-//        DontDestroyOnLoad(child);
         
         m_hexGridMap = new HexGridMap(tilemap);
         InitGame();
@@ -40,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
-        child.SetActive(true);
+//        childGO.SetActive(true);
         isGameRunning = true;
 
         m_player.currentPosition = m_player.StartPoint;
@@ -76,15 +75,15 @@ public class GameManager : MonoBehaviour
         }
     }
     
-   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-   {
-       InitGame();
-   }
-
-   private void OnEnable()
-   {
-       SceneManager.sceneLoaded += OnSceneLoaded;
-   }
+//   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+//   {
+//       InitGame();
+//   }
+//
+//   private void OnEnable()
+//   {
+//       SceneManager.sceneLoaded += OnSceneLoaded;
+//   }
 
 //   private void OnDisable()
 //   {
@@ -99,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     void LoadFinishScene()
     {
-        child.SetActive(false);
+//        child.SetActive(false);
         SceneManager.LoadScene("Finish");
     }
 }
