@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: fb65cd763beee604596176195bddc759, type: 3}
-    totalSpriteSurfaceArea: 856055
+    totalSpriteSurfaceArea: 970743
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -40,10 +40,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e32546120b1726a4492b893db1d90472, type: 3}
   - {fileID: 21300000, guid: 29366242e80b649419caab0dc9742ff3, type: 3}
   - {fileID: 21300000, guid: 120bd5d2d5c737648a4a52e1aff66d16, type: 3}
+  - {fileID: 21300000, guid: 4f27bdd29b705e64f8715c82a41751d0, type: 3}
   - {fileID: 21300000, guid: 4d2c1758206121446833f96fb59f15d2, type: 3}
   - {fileID: 21300000, guid: 41175dc8836bc234ba832e57d2c87e95, type: 3}
   - {fileID: 21300000, guid: 19a20f0950c4ad64cb45f46b9911c655, type: 3}
   - {fileID: 21300000, guid: c29c6fa9e1b1e754280c2f441b7c2214, type: 3}
+  - {fileID: 21300000, guid: 078d088ba9584d04ea47ad584fcdde35, type: 3}
   - {fileID: 21300000, guid: 82cb605c3fbc05e428c631c8932176e0, type: 3}
   - {fileID: 21300000, guid: 2b32e7ce6cefd3044b75f22e616ef7cb, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -52,10 +54,12 @@ SpriteAtlas:
   - quit button
   - radint
   - start button pressed
+  - lampoff
   - REstart button pressed
   - mnu button pressed
   - quit button prssd
   - start button
+  - lampon
   - mnu button
   - Logo_text
   m_Tag: UI

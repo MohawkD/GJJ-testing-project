@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
 
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
-        if(currentPosition.x > winDistance) {
+        if(currentPosition.x >= winDistance) {
             winCondition.SetActive(true);
 
             foreach(Button button in buttons) {
