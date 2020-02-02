@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class Player : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
     public Vector2Int StartPoint;
     public Vector2Int FinishPoint;
     
+    public bool inputIsStatic = true;
+    private int[] staticInputs = new int[3];
 
     public void Init()
     {
@@ -55,6 +58,21 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(inputIsStatic) {
+            for(int i = 0; i < 3; i++) {
+                bool found = false;
+                while(!found) {
+                    int randNum = Random.Range(0, 4);
+                    Debug.Log("rand num " + randNum);
+                    if(!staticInputs.Contains(randNum)){
+                        found = true;
+                        staticInputs[i] = randNum;
+                        Debug.Log("rand num " + randNum + "added");
+                    }
+                }
+                
+            }
+        }
         Invoke("startGame", 2.0f);
     }
 
@@ -80,16 +98,16 @@ public class Player : MonoBehaviour
             int button_pressed = -1;
             if(Input.GetButtonDown("P" + playerNumber + " A")) {
                 button_pressed = 0;
-                Debug.Log("P" + playerNumber + " A");
+                //Debug.Log("P" + playerNumber + " A");
             } else if(Input.GetButtonDown("P" + playerNumber + " B")) {
                 button_pressed = 1;
-                Debug.Log("P" + playerNumber + " B");
+                //Debug.Log("P" + playerNumber + " B");
             } else if(Input.GetButtonDown("P" + playerNumber + " X")) {
                 button_pressed = 2;
-                Debug.Log("P" + playerNumber + " X");
+                //Debug.Log("P" + playerNumber + " X");
             } else if(Input.GetButtonDown("P" + playerNumber + " Y")) {
                 button_pressed = 3;
-                Debug.Log("P" + playerNumber + " Y");
+                //Debug.Log("P" + playerNumber + " Y");
             }
             
             if(button_pressed >= 0)
@@ -105,7 +123,7 @@ public class Player : MonoBehaviour
 
             yield return null;
         }
-        Debug.Log("P" + playerNumber + " player input received");
+        //Debug.Log("P" + playerNumber + " player input received");
     }
 
     private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection, out bool isBouncing)
@@ -237,14 +255,18 @@ public class Player : MonoBehaviour
         for(int i = 0; i < 3; i++) {
             buttons[i].GetComponent<Image>().color = new Color32(255,255,255,255);
         }
-        int[, ] easyButtonIndices = new int[2, 3] {{0, 0, 0}, {3, 0, 3}};
+
+        int[, ] easyButtonIndices = new int[4, 3] {{0, 0, 0}, {1, 1, 1}, {2, 2, 2}, {3, 3, 3}};
         int easy_index = Random.Range(0, easyButtonIndices.GetLength(0));
 
         for(int i = 0; i < 3; i++) {
             int button_index = 0;
-            if(!isSpedUp) {
+
+            if(inputIsStatic) {
+                button_index = staticInputs[i];
+            } else if(!isSpedUp) {
                 button_index = Random.Range(0, 4);
-            } else {
+            }  else {
                 button_index = easyButtonIndices[easy_index, i];
             }
             requiredInputs[i] = button_index;
