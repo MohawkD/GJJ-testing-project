@@ -346,8 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpImages:
-  - {fileID: 6354150276909252911, guid: 5e3624dd61e594840a588e238a91fcdd, type: 3}
-  - {fileID: 7506607422692124883, guid: 0e1a627dea117094fa4c0fed7c50fba3, type: 3}
+  - {fileID: 5067533448526835799, guid: ae51c61379ecc00428bb7af0fcc60166, type: 3}
+  - {fileID: 635948097679636401, guid: 7cc7935f99b51e84b9dd9c2473cb4d3a, type: 3}
   powerUpSpawnTime: 5
 --- !u!4 &504998152
 Transform:
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   otherPlayer: {fileID: 1855281096}
   StartPoint: {x: 0, y: 0}
   FinishPoint: {x: 3, y: 8}
+  inputIsStatic: 1
 --- !u!95 &1526318008
 Animator:
   serializedVersion: 3
@@ -1793,6 +1794,7 @@ MonoBehaviour:
   otherPlayer: {fileID: 1526318007}
   StartPoint: {x: -10, y: 0}
   FinishPoint: {x: 16, y: 0}
+  inputIsStatic: 1
 --- !u!212 &1855281097
 SpriteRenderer:
   m_ObjectHideFlags: 0
