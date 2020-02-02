@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public int bounceAmount = 2;
     public int bounceBorder = 20;
-//    public int winDistance = 10;
+    public int winDistance = 10;
     public float timeFrozen = 5.0f;
     public int speedUpBoost = 3;
     
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 //    private Wire currentWire = null;
     private int easyInputsDone = 0;
     private bool isSpedUp = false;
-    public bool isFrozen = false;
+    private bool isFrozen = false;
     private int correctInputs = 0;
     
     private Animator animator;
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public Vector2Int FinishPoint;
     public bool inputIsStatic = true;
     private int[] staticInputs = new int[3];
-
+    public GameObject winCondition;
 
     private int preMoveDirectionIndex;
     public void Init()
@@ -65,11 +65,11 @@ public class Player : MonoBehaviour
                 bool found = false;
                 while(!found) {
                     int randNum = Random.Range(0, 4);
-                    Debug.Log("rand num " + randNum);
+                    //Debug.Log("rand num " + randNum);
                     if(!staticInputs.Contains(randNum)){
                         found = true;
                         staticInputs[i] = randNum;
-                        Debug.Log("rand num " + randNum + "added");
+                        //Debug.Log("rand num " + randNum + "added");
                     }
                 }
                 
@@ -131,13 +131,13 @@ public class Player : MonoBehaviour
     private Vector2Int checkIfBounce(Vector2Int newPosition, Vector2Int moveDirection, out bool isBouncing)
     {
         isBouncing = false;
-        if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder)
+/*         if(Mathf.Abs(newPosition.x) > bounceBorder || Mathf.Abs(newPosition.y) > bounceBorder)
         {
             isBouncing = true;
             moveDirection = -1 * bounceAmount * moveDirection;
             newPosition = currentPosition + moveDirection;
             Debug.Log("Player " + playerNumber + " tried of move out of bounds and bounced");
-        }
+        } */
         if(newPosition == otherPlayer.currentPosition)
         {
             isBouncing = true;
@@ -149,7 +149,10 @@ public class Player : MonoBehaviour
     }
 
     private bool checkIfWin(Vector2Int currentPosition) {
-        if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
+        //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
+        if(currentPosition.x > winDistance) {
+            winCondition.SetActive(true);
+
             foreach(Button button in buttons) {
                 button.gameObject.SetActive(false);
             }
@@ -222,16 +225,18 @@ public class Player : MonoBehaviour
 
             Vector2Int moveDirection = findMoveDirection(correctInputs);
 
-            currentPosition += moveDirection;
-//            Vector2Int newPosition = currentPosition + moveDirection;
-//            
-//            bool isBouncing = false;
-//            newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
+            Vector2Int newPosition = currentPosition + moveDirection;
+
+          
+            bool isBouncing = false;
+            newPosition = checkIfBounce(newPosition, moveDirection, out isBouncing);
 //            
 //            currentPosition = newPosition;
 //            Debug.Log("New pos: " + currentPosition);
 //
-//            checkPowerUp(currentPosition);
+            currentPosition = newPosition;
+
+            checkPowerUp(currentPosition);
             
             
             hasPlayerWon = checkIfWin(currentPosition);
@@ -269,7 +274,7 @@ public class Player : MonoBehaviour
         for(int i = 0; i < 3; i++) {
             int button_index = 0;
 
-            if(inputIsStatic) {
+            if(inputIsStatic && !isSpedUp) {
                 button_index = staticInputs[i];
             } else if(!isSpedUp) {
                 button_index = Random.Range(0, 4);

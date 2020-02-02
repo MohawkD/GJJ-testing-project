@@ -36,8 +36,7 @@ public class powerUpSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeToPowerUp = Random.Range(powerUpSpawnTime - 2.5f, powerUpSpawnTime + 2.5f);
-        timeToPowerUp = 0;
+        timeToPowerUp = Random.Range(2 + powerUpSpawnTime - 2.5f, 2 + powerUpSpawnTime + 2.5f);
     }
 
     // Update is called once per frame
@@ -49,15 +48,15 @@ public class powerUpSpawner : MonoBehaviour
             time = 0.0f;
             SpawnPowerUp();
             timeToPowerUp = Random.Range(powerUpSpawnTime - 2.5f, powerUpSpawnTime + 2.5f);
-            Debug.Log("Next power up in " + timeToPowerUp + "seconds");
+            //Debug.Log("Next power up in " + timeToPowerUp + "seconds");
         }
     }
 
     private Vector2Int getSpawnLocation() {
         while(true)
         {
-            int x = Random.Range(-5, 6);
-            int y = Random.Range(-5, 6);
+            int x = Random.Range(-2, 2);
+            int y = Random.Range(-2, 2);
             Vector2Int location = new Vector2Int(x, y);
             if(!spawnedPowerUps.ContainsKey(location)) {
                 return(location);
@@ -72,7 +71,7 @@ public class powerUpSpawner : MonoBehaviour
         Vector3 spawn_transform = GameManager.instance.getPosition(spawnLocation);
         GameObject spawnedPowerUp = Instantiate(powerUpImages[powerUpIndex], spawn_transform, Quaternion.identity);
         spawnedPowerUps.Add(spawnLocation, spawnedPowerUp);
-        Debug.Log("Power up spawned");
+        //Debug.Log("Power up spawned");
     }
 
     public void removePowerUp(Vector2Int coordinate)
