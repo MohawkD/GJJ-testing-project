@@ -55,8 +55,8 @@ public class powerUpSpawner : MonoBehaviour
     private Vector2Int getSpawnLocation() {
         while(true)
         {
-            int x = Random.Range(-2, 2);
-            int y = Random.Range(-2, 2);
+            int x = Random.Range(-10, 10);
+            int y = Random.Range(-5, 5);
             Vector2Int location = new Vector2Int(x, y);
             if(!spawnedPowerUps.ContainsKey(location)) {
                 return(location);
