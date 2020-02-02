@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
 
     private HexGridMap m_hexGridMap;
 
+    private bool isGameRunning = false;
+
+    public GameObject child;
+
     private void Awake()
     {
         if (instance == null)
@@ -27,14 +32,17 @@ public class GameManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+//        DontDestroyOnLoad(child);
         
         m_hexGridMap = new HexGridMap(tilemap);
-        
         InitGame();
     }
 
     private void InitGame()
     {
+        child.SetActive(true);
+        isGameRunning = true;
+
         m_player.currentPosition = m_player.StartPoint;
         m_player.transform.position = m_hexGridMap.GetGridPosition(m_player.currentPosition);
         m_player.Init();
@@ -46,10 +54,6 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public Vector3 getPosition(Vector2Int gridCoordinate)
     {
@@ -58,21 +62,44 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//        m_player.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player.currentPosition);
-//        m_player_2.gameObject.transform.position = m_hexGridMap.GetGridPosition(m_player_2.currentPosition);
-        m_player.UpdatePosition(m_hexGridMap.GetGridPosition(m_player.currentPosition));
-        m_player_2.UpdatePosition(m_hexGridMap.GetGridPosition(m_player_2.currentPosition));
+        if (isGameRunning)
+        {
+            if (m_player != null)
+            {
+                m_player.UpdatePosition(m_hexGridMap.GetGridPosition(m_player.currentPosition));
+            }
+
+            if (m_player_2 != null)
+            {
+                m_player_2.UpdatePosition(m_hexGridMap.GetGridPosition(m_player_2.currentPosition));
+            }
+        }
     }
     
-   
+   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+   {
+       InitGame();
+   }
 
-    public void GameFinish()
+   private void OnEnable()
+   {
+       SceneManager.sceneLoaded += OnSceneLoaded;
+   }
+
+//   private void OnDisable()
+//   {
+//       SceneManager.sceneLoaded -= OnSceneLoaded;
+//   }
+
+   public void GameFinish()
     {
+        isGameRunning = false;
         Invoke(nameof(LoadFinishScene), 3.0f);
     }
 
     void LoadFinishScene()
     {
+        child.SetActive(false);
         SceneManager.LoadScene("Finish");
     }
 }

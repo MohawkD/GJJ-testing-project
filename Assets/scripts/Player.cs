@@ -48,8 +48,9 @@ public class Player : MonoBehaviour
     private int[] staticInputs = new int[3];
     public GameObject winCondition;
 
-    private int preMoveDirectionIndex;
-    public void Init()
+    private int preMoveDirectionIndex = 0;
+
+    private void Awake()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         wire = new NewWire(lineRenderer, transform.position);
@@ -57,9 +58,10 @@ public class Player : MonoBehaviour
         preMoveDirectionIndex = 0;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
+        
+        
         if(inputIsStatic) {
             for(int i = 0; i < 3; i++) {
                 bool found = false;

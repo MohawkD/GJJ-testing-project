@@ -11,6 +11,7 @@ public class ScenesController : MonoBehaviour
         SceneManager.LoadScene("Game 1");
         
         Destroy(this.gameObject);
+//        Application.Quit();
     }
 
     public void ReturnToMainMenu()
