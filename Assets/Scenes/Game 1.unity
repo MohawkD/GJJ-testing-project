@@ -16141,6 +16141,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1374564501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4975768386158245136, guid: e57c094fa6d827045900bee6d357ef6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2040121209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375165390
 GameObject:
   m_ObjectHideFlags: 0
@@ -16285,6 +16291,7 @@ MonoBehaviour:
   FinishPoint: {x: 3, y: 8}
   inputIsStatic: 1
   winCondition: {fileID: 560356957813597375}
+  startCondition: {fileID: 1374564501}
 --- !u!95 &1526318008
 Animator:
   serializedVersion: 3
@@ -16613,6 +16620,7 @@ MonoBehaviour:
   FinishPoint: {x: 16, y: 0}
   inputIsStatic: 1
   winCondition: {fileID: 560356957813597375}
+  startCondition: {fileID: 1374564501}
 --- !u!212 &1855281097
 SpriteRenderer:
   m_ObjectHideFlags: 0
