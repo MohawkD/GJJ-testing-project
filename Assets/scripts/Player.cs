@@ -49,6 +49,9 @@ public class Player : MonoBehaviour
     public GameObject winCondition;
     public GameObject startCondition;
 
+    public GameObject lampon;
+    public GameObject lampoff;
+
     private int preMoveDirectionIndex;
     public void Init()
     {
@@ -159,7 +162,8 @@ public class Player : MonoBehaviour
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
         if(currentPosition.x >= winDistance && hasBattery) {
             winCondition.SetActive(true);
-
+            lampoff.SetActive(false);
+            lampon.SetActive(true);
             foreach(Button button in buttons) {
                 button.gameObject.SetActive(false);
             }
