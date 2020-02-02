@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
         preMoveDirectionIndex = 0;
     }
 
+    public bool hasBattery = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,7 +152,7 @@ public class Player : MonoBehaviour
 
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
-        if(currentPosition.x >= winDistance) {
+        if(currentPosition.x >= winDistance && hasBattery) {
             winCondition.SetActive(true);
 
             foreach(Button button in buttons) {
@@ -208,8 +210,10 @@ public class Player : MonoBehaviour
         string content = powerUpSpawner.instance.getCoordinateContent(currentPosition);
         if(content == "freeze") {
             Debug.Log("Pickup freeze");
+            hasBattery = true;
             freezeOpponent();
         } else if(content == "speed") {
+            hasBattery = true;
             isSpedUp = true;
         }
     }
