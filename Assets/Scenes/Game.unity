@@ -146,19 +146,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10512729
+      value: 0.00024680895
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.10512729
+      value: -0.00024680895
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6992484
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6992484
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_RootOrder
@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 17.1
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2062,15 +2062,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9e6d33a798471ba44933410bd77b1118, type: 3}
   bounceAmount: 2
   bounceBorder: 5
+  winDistance: 10
   timeFrozen: 5
   speedUpBoost: 3
+  hasBattery: 0
   currentPosition: {x: 0, y: 0}
   Speed: 5
-  isFrozen: 0
   otherPlayer: {fileID: 1855281096}
   StartPoint: {x: 0, y: 0}
   FinishPoint: {x: 5, y: 0}
   inputIsStatic: 1
+  winCondition: {fileID: 0}
 --- !u!95 &1526318008
 Animator:
   serializedVersion: 3
@@ -2305,15 +2307,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9e6d33a798471ba44933410bd77b1118, type: 3}
   bounceAmount: 2
   bounceBorder: 5
+  winDistance: 10
   timeFrozen: 5
   speedUpBoost: 3
+  hasBattery: 0
   currentPosition: {x: 0, y: 0}
   Speed: 5
-  isFrozen: 0
   otherPlayer: {fileID: 1526318007}
   StartPoint: {x: 0, y: 0}
   FinishPoint: {x: 5, y: 0}
   inputIsStatic: 1
+  winCondition: {fileID: 0}
 --- !u!212 &1855281097
 SpriteRenderer:
   m_ObjectHideFlags: 0
