@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,4 +21,45 @@ public static class GlobalVar
 
     public static string isMoving = "isMoving";
 
+    public static int NumOfMoveDirections = 6;
+
+    public static Vector2Int GetMoveDirection(int moveIndex, Vector2Int currentPos)
+    {
+        List<Vector2Int> directionListOdd = new List<Vector2Int>
+        {
+            Vector2Int.right, 
+            Vector2Int.one, 
+            Vector2Int.up, 
+            Vector2Int.left,
+            new Vector2Int(0,-1), 
+            new Vector2Int(1, -1)
+        };
+        
+        List<Vector2Int> directionListEven = new List<Vector2Int>
+        {
+            Vector2Int.right, 
+            Vector2Int.up, 
+            new Vector2Int(-1, 1), 
+            Vector2Int.left,
+            -Vector2Int.one, 
+            Vector2Int.down
+        };
+
+        //positive negative issue
+        if (Math.Abs(currentPos.y) % 2 == 1)
+        {
+            return directionListOdd[moveIndex];
+        }
+        else
+        {
+            return directionListEven[moveIndex];
+        }
+        
+    }
+
+    public static int GetNextMoveDirectionIndex(int preMoveIndex, int numofIncorrect)
+    {
+        int newDirect = (preMoveIndex + numofIncorrect) % NumOfMoveDirections;
+        return newDirect;
+    }
 }
