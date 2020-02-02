@@ -93,21 +93,6 @@ public class Player : MonoBehaviour
                 Debug.Log("P" + playerNumber + " Y");
             }
             
-            //for keyboard test
-//            if(Input.GetKeyDown(KeyCode.A)) {
-//                button_pressed = 0;
-//                Debug.Log("P" + playerNumber + " A");
-//            } else if(Input.GetKeyDown(KeyCode.B)) {
-//                button_pressed = 1;
-//                Debug.Log("P" + playerNumber + " B");
-//            } else if(Input.GetKeyDown(KeyCode.X)) {
-//                button_pressed = 2;
-//                Debug.Log("P" + playerNumber + " X");
-//            } else if(Input.GetKeyDown(KeyCode.Y)) {
-//                button_pressed = 3;
-//                Debug.Log("P" + playerNumber + " Y");
-//            }
-
             if(button_pressed >= 0)
             {
                 if(button_pressed == requiredInputs[registeredPresses]) {
