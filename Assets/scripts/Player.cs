@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
             //TODO: winning animation
             Debug.Log("Player " + playerNumber + " wins!");
             
-            GameManager.instance.GameFinish();
+            GameManager.instance.GameFinish(playerNumber);
             
             return true;
         }

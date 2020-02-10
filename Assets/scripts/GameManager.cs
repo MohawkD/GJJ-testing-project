@@ -90,9 +90,10 @@ public class GameManager : MonoBehaviour
 //       SceneManager.sceneLoaded -= OnSceneLoaded;
 //   }
 
-   public void GameFinish()
+   public void GameFinish(int winner_number)
     {
         isGameRunning = false;
+        PlayerPrefs.SetInt ("winner_number", winner_number);
         Invoke(nameof(LoadFinishScene), 3.0f);
     }
 
