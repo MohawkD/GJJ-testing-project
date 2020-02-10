@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         
         m_hexGridMap = new HexGridMap(tilemap);
         InitGame();
