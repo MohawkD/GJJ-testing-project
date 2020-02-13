@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     public int speedUpBoost = 3;
     public bool hasBattery = false;
     public Vector2Int currentPosition;
-    public GameObject lampon;
-    public GameObject lampoff;
+    public GameObject lamp;
+    private Animator lampAnimator;
 
 
 //    public GameObject wirePrefab;
@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         wire = new NewWire(lineRenderer, transform.position);
         animator = GetComponent<Animator>();
+        lampAnimator = lamp.GetComponent<Animator>();
         preMoveDirectionIndex = 0;
     }
 
@@ -160,8 +161,7 @@ public class Player : MonoBehaviour
     private bool checkIfWin(Vector2Int currentPosition) {
         //if(Vector2Int.Distance(currentPosition, FinishPoint) <= 1) {
         if((currentPosition.x >= winDistance  && hasBattery) || hackWin) {
-            lampon.SetActive(true);
-            lampoff.SetActive(false);
+            lampAnimator.SetBool("hasWon", true);
 
             winCondition.SetActive(true);
 
@@ -234,9 +234,13 @@ public class Player : MonoBehaviour
         if(content == "freeze") {
             Debug.Log("Pickup freeze");
             hasBattery = true;
+            lampAnimator.SetBool("hasBattery", true);
+
             freezeOpponent();
         } else if(content == "speed") {
             hasBattery = true;
+            lampAnimator.SetBool("hasBattery", true);
+
             isSpedUp = true;
         }
     }
