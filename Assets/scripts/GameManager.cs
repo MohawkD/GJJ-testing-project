@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
    public void GameFinish(int winner_number)
     {
         isGameRunning = false;
-        PlayerPrefs.SetInt ("winner_number", winner_number);
+        PlayerPrefs.SetInt("winner_number", winner_number);
         Invoke(nameof(LoadFinishScene), 3.0f);
     }
 
